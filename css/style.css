@@ -38,6 +38,7 @@ header svg {
     position: relative;
     bottom: 422px;
     left: 0;
+    height: 422px;
     background-color: transparent;
     transform: rotateX(180deg);
 }
@@ -46,10 +47,11 @@ header path {
     fill: white;
 }
 
-#header-bg-color {
+#header-main-content {
     position: relative;
     height: 100%;
     background: linear-gradient(var(--primaryColor) 74px, #191B63);
+    overflow: hidden;
 }
 
 
