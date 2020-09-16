@@ -1,0 +1,165 @@
+@font-face {
+    font-family: "LS";
+    src: url('../fonts/LeagueSpartan-Bold.otf') format('opentype');
+}
+
+:root {
+    --primaryColor: #3a41e4;
+    --secondaryColor: #fa465e;
+    --largeur: 70%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 500vh;
+    color: #191B63;
+}
+
+.page-largeur {
+    width: var(--largeur);
+    margin: 0 auto;
+    position: relative;
+}
+
+h2 {
+    font-family: 'LS';
+}
+
+header {
+    height: 100vh;
+    color: white;
+    z-index: -1;
+}
+
+header svg {
+    position: relative;
+    bottom: 422px;
+    left: 0;
+    background-color: transparent;
+    transform: rotateX(180deg);
+}
+
+header path {
+    fill: white;
+}
+
+#header-bg-color {
+    position: relative;
+    height: 100%;
+    background: linear-gradient(var(--primaryColor) 74px, #191B63);
+}
+
+
+/*HEADER NAV*/
+
+#navigation {
+    background-color: var(--primaryColor);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 0.5em 0;
+    z-index: 999;
+}
+
+.navbar {
+    justify-content: space-between;
+}
+
+
+/*-----*/
+
+a,
+a:hover {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.25px;
+    font-family: 'Titillium web';
+}
+
+.nav-link,
+.nav-link:hover {
+    margin: 0 0.75em;
+    font-size: 17px;
+}
+
+.nav-link:after {
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: white;
+    border-radius: 20px;
+    transition: width 250ms ease-in-out;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+#cv,
+#work {
+    margin: 0;
+    border-radius: 20px;
+}
+
+#cv {
+    color: var(--secondaryColor);
+    border: 2px solid var(--secondaryColor);
+}
+
+#cv:after {
+    content: none;
+}
+
+#work {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin-top: 2em;
+    font-size: 15px;
+    text-decoration: none;
+    background-color: var(--secondaryColor);
+    color: white;
+}
+
+#info {
+    height: 100%;
+}
+
+#info-text {
+    position: absolute;
+    left: 10%;
+    top: 30%;
+}
+
+#info-text p {
+    font-size: 20px;
+    margin: 0;
+}
+
+#info-text h2 {
+    font-size: 50px;
+    margin: 0;
+}
+
+#info-photo {
+    position: absolute;
+    left: 65%;
+    top: 30%;
+    z-index: 0;
+    transform: scale(1.4);
+}
+
+#info-photoder img {
+    width: 100%;
+}
+
+#projet {
+    position: relative;
+    padding: 1em;
+    margin-top: -192px;
+}
