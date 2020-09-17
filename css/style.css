@@ -4,9 +4,17 @@
 }
 
 :root {
-    --primaryColor: #3a41e4;
-    --secondaryColor: #fa465e;
-    --largeur: 70%;
+    --primaryColor: #1543f0;
+    --secondaryColor: #fe3;
+    --fontColor: #191b63;
+    /*----------------------*/
+    --primaryColor: #161928;
+    --secondaryColor: #ec2424;
+    --gradientColor: #161928;
+    --fontColor: #161928;
+    --otherFontColor: #fbfcfc;
+    --largeur: 50%;
+    --max-largeur: 1152px;
 }
 
 html {
@@ -15,42 +23,138 @@ html {
 
 body {
     height: 500vh;
-    color: #191B63;
+    color: var(--fontColor);
+    background-color: var(--otherFontColor);
+    font-family: 'work sans';
+}
+
+body p {
+    font-size: 20px;
+    text-align: justify;
 }
 
 .page-largeur {
     width: var(--largeur);
-    margin: 0 auto;
+    max-width: var(--max-largeur);
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primaryColor);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#loader h2 {
+    color: var(--otherFontColor);
+    font-size: 3em;
+}
+
+#loader-content {
+    position: absolute;
+}
+
+.circle,
+#loader-content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle {
+    position: relative;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 7.5px solid rgba(255, 255, 255, .1);
+    border-top: 7.5px solid #fff;
+    animation: animate 1.5s infinite linear;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 h2 {
     font-family: 'LS';
+    font-size: 40px;
+}
+
+section h2:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--primaryColor);
 }
 
 header {
     height: 100vh;
-    color: white;
-    z-index: -1;
+    max-height: 1080px;
+    color: var(--otherFontColor);
 }
 
-header svg {
-    position: relative;
-    bottom: 422px;
+main {
+    margin-top: -11em;
+}
+
+@keyframes wave {
+    0% {
+        width: calc(194% + 1.3px);
+        height: 400px;
+    }
+    50% {
+        width: calc(225% + 1.3px);
+        height: 450px;
+    }
+    100% {
+        width: calc(194% + 1.3px);
+        height: 400px;
+    }
+}
+
+#shape {
+    position: absolute;
+    bottom: 0;
     left: 0;
-    height: 422px;
-    background-color: transparent;
-    transform: rotateX(180deg);
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
 }
 
-header path {
-    fill: white;
+#shape svg {
+    position: relative;
+    display: block;
+    width: calc(194% + 1.3px);
+    height: 400px;
+    transform-origin: bottom;
+    animation: wave 5000ms cubic-bezier(.86, .99, .76, .95) infinite;
+}
+
+#shape .shape-fill {
+    fill: var(--otherFontColor);
 }
 
 #header-main-content {
     position: relative;
     height: 100%;
-    background: linear-gradient(var(--primaryColor) 74px, #191B63);
+    background: linear-gradient(var(--primaryColor) 74px, var(--gradientColor));
     overflow: hidden;
 }
 
@@ -63,12 +167,16 @@ header path {
     width: 100%;
     top: 0;
     left: 0;
-    padding: 0.5em 0;
     z-index: 999;
 }
 
 .navbar {
     justify-content: space-between;
+    width: 80%;
+    max-width: 1332px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 
@@ -76,31 +184,38 @@ header path {
 
 a,
 a:hover {
-    color: white;
+    color: var(--otherFontColor);
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1.25px;
+    font-size: 15px;
     font-family: 'Titillium web';
 }
 
 .nav-link,
 .nav-link:hover {
-    margin: 0 0.75em;
-    font-size: 17px;
+    position: relative;
+    margin: 0 0.5em;
 }
 
 .nav-link:after {
     display: block;
     content: "";
-    height: 2px;
-    width: 0;
-    background-color: white;
-    border-radius: 20px;
-    transition: width 250ms ease-in-out;
+    height: calc(100% + 20px);
+    width: 100%;
+    position: absolute;
+    top: -10px;
+    transform: scaleY(0);
+    transform-origin: top;
+    left: 0;
+    background-color: var(--secondaryColor);
+    transition: all 250ms ease-in-out;
+    z-index: -1;
 }
 
+.nav-link.active:after,
 .nav-link:hover:after {
-    width: 100%;
+    transform: scaleY(1);
 }
 
 #cv,
@@ -122,10 +237,9 @@ a:hover {
     display: inline-block;
     padding: 0.5em 1em;
     margin-top: 2em;
-    font-size: 15px;
     text-decoration: none;
     background-color: var(--secondaryColor);
-    color: white;
+    color: var(--primaryColor);
 }
 
 #info {
@@ -134,7 +248,6 @@ a:hover {
 
 #info-text {
     position: absolute;
-    left: 10%;
     top: 30%;
 }
 
@@ -150,18 +263,18 @@ a:hover {
 
 #info-photo {
     position: absolute;
-    left: 65%;
-    top: 30%;
-    z-index: 0;
+    left: calc(100% - 281px);
+    top: 25%;
     transform: scale(1.4);
+    overflow: hidden;
 }
 
-#info-photoder img {
+#info-photo img {
     width: 100%;
+    transform: rotate(2deg);
 }
 
-#projet {
+#projets {
     position: relative;
-    padding: 1em;
-    margin-top: -192px;
+    padding-top: 4em;
 }
