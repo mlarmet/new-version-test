@@ -4,10 +4,6 @@
 }
 
 :root {
-    --primaryColor: #1543f0;
-    --secondaryColor: #fe3;
-    --fontColor: #191b63;
-    /*----------------------*/
     --primaryColor: #161928;
     --secondaryColor: #ec2424;
     --gradientColor: #161928;
@@ -23,15 +19,13 @@ html {
 }
 
 body {
-    height: 500vh;
     color: var(--fontColor);
     background-color: var(--otherFontColor);
-    font-family: 'work sans';
 }
 
 body p {
     font-size: 20px;
-    text-align: justify;
+    font-family: 'work sans';
 }
 
 .page-largeur {
@@ -58,46 +52,16 @@ body p {
 
 #loader h2 {
     color: var(--otherFontColor);
-    font-size: 2em;
-    margin-top: 2em;
+    font-size: 2rem;
+    margin-top: 2.5rem;
 }
 
-#loader-content {
-    position: absolute;
-    width: 208px;
-}
-
-#loader-content p {
-    background: var(--secondaryColor);
-    color: var(--otherFontColor);
-    border-radius: 10px;
-    font-size: 15px;
-    width: 50px;
-    text-align: center;
-    margin: 0;
-    margin-top: 1em;
-    padding: 0.25em;
-    margin-left: calc(0% - 25px);
-    position: relative;
-}
-
-#loader-content p:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 5px solid var(--secondaryColor);
-}
-
-.progress-bar {
-    background-color: var(--secondaryColor);
-    transition: all 0s;
+.spinner-border {
+    width: 4rem;
+    height: 4rem;
+    border-width: 0.33rem;
+    border-color: var(--otherFontColor);
+    border-top-color: var(--secondaryColor);
 }
 
 h2 {
@@ -111,6 +75,7 @@ section h2:after {
     position: absolute;
     width: 100%;
     height: 4px;
+    border-radius: 20px;
     background-color: var(--primaryColor);
 }
 
@@ -121,7 +86,7 @@ header {
 }
 
 main {
-    margin-top: -11em;
+    margin-top: -11rem;
 }
 
 @keyframes wave {
@@ -205,7 +170,7 @@ a:hover {
 .nav-link,
 .nav-link:hover {
     position: relative;
-    margin: 0 0.5em;
+    margin: 0 0.5rem;
 }
 
 .nav-link:after {
@@ -232,11 +197,13 @@ a:hover {
 #work {
     margin: 0;
     border-radius: 20px;
+    text-decoration: none;
 }
 
 #cv {
     color: var(--secondaryColor);
     border: 2px solid var(--secondaryColor);
+    padding: 0.5rem 1rem;
 }
 
 #cv:after {
@@ -245,9 +212,8 @@ a:hover {
 
 #work {
     display: inline-block;
-    padding: 0.5em 1em;
-    margin-top: 2em;
-    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin-top: 2rem;
     background-color: var(--secondaryColor);
     color: var(--primaryColor);
 }
@@ -286,5 +252,5 @@ a:hover {
 
 #projets {
     position: relative;
-    padding-top: 4em;
+    padding-top: 4rem;
 }

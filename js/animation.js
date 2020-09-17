@@ -1,10 +1,10 @@
 var scrollLimit = 75;
-var dots = 0;
+var dots = 3;
 var fait = false;
 
 $(document).ready(function() {
 
-    setInterval(function() {
+    /*setInterval(function() {
         if (dots < 3) {
             $('#loader h2').append('.');
 
@@ -15,38 +15,26 @@ $(document).ready(function() {
             }
             dots = 0;
         }
-    }, 600);
+    }, 600);*/
 
-
+    AOS.init({
+        duration: 750,
+        disable: 'mobile',
+        once: true,
+    });
 
 });
 
-var x = 0;
-var progress = setInterval(function() {
-    if (x < 100) {
-        $('.progress-bar').css("width", x + "%");
-        $("#loader-content p").text(x + "%");
-        $("#loader-content p").css("margin-left", "calc(" + x + "% - 25px)");
-        x++;
-    } else {
-        clearInterval(progress);
-        $('.progress-bar').css("width", "100%");
-        $('#loader-content p').text("100%");
-        $("#loader-content p").css("margin-left", "calc(100% - 25px)");
-    }
 
-}, 100);
 
 $(window).on("load", function() {
 
-    clearInterval(progress);
-    $('.progress-bar').css("width", "100%");
-    $('#loader-content p').text("100%");
-    $("#loader-content p").css("margin-left", "calc(100% - 25px)");
     setTimeout(function() {
         $("#loader").fadeOut(250);
         $("html").css("overflow-y", "scroll");
     }, 250);
+
+    $('.aniview').AniView();
 
     //nav();
 
@@ -71,7 +59,7 @@ $(window).on("load", function() {
         $("#h-menu-links .nav li").children().eq($children2.index(this)).addClass("active");*/
     });
 
-    $("#h-menu-icon").click(function() {
+    /*$("#h-menu-icon").click(function() {
         fait = true;
         if ($("#h-menu-links").is(":visible")) {
             $("#h-menu-links").slideUp(250);
@@ -81,9 +69,8 @@ $(window).on("load", function() {
             $("#h-menu-icon").addClass("change");
 
         }
-    });
+    });*/
 
-    /*cacher img pizza si click sur autre chose que l'img*/
     /*$(document).click(function(evt) {
         var inside = document.querySelector("#popup img");
 
@@ -146,6 +133,7 @@ $(window).on("orientationchange resize", function() {
 
 };*/
 
-/*$(window).scroll(function() {
-    nav();
-});*/
+$(window).scroll(function() {
+
+
+});
