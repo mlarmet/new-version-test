@@ -4,12 +4,45 @@ var fait = false;
 
 $(document).ready(function() {
 
+    setInterval(function() {
+        if (dots < 3) {
+            $('#loader h2').append('.');
+
+            dots++;
+        } else {
+            while ($('#loader h2').text().indexOf(".") >= 0) {
+                $('#loader h2').text($('#loader h2').text().replace('.', ''));
+            }
+            dots = 0;
+        }
+    }, 600);
+
+
+
 });
 
+var x = 0;
+var progress = setInterval(function() {
+    if (x < 100) {
+        $('.progress-bar').css("width", x + "%");
+        $("#loader-content p").text(x + "%");
+        $("#loader-content p").css("margin-left", "calc(" + x + "% - 25px)");
+        x++;
+    } else {
+        clearInterval(progress);
+        $('.progress-bar').css("width", "100%");
+        $('#loader-content p').text("100%");
+        $("#loader-content p").css("margin-left", "calc(100% - 25px)");
+    }
+
+}, 100);
 
 $(window).on("load", function() {
 
-
+    /*clearInterval(progress);
+    $('.progress-bar').css("width", "100%");
+    $('#loader-content p').text("100%");
+    $("#loader-content p").css("margin-left", "calc(100% - 25px)");*/
     /*setTimeout(function() {
         $("#loader").fadeOut(250);
         $("html").css("overflow-y", "scroll");

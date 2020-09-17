@@ -57,37 +57,46 @@ body p {
 
 #loader h2 {
     color: var(--otherFontColor);
-    font-size: 3em;
+    font-size: 2em;
+    margin-top: 2em;
 }
 
 #loader-content {
     position: absolute;
+    width: 208px;
 }
 
-.circle,
-#loader-content {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.circle {
+#loader-content p {
+    background: var(--secondaryColor);
+    color: var(--otherFontColor);
+    border-radius: 10px;
+    font-size: 15px;
+    width: 50px;
+    text-align: center;
+    margin: 0;
+    margin-top: 1em;
+    padding: 0.25em;
+    margin-left: calc(0% - 25px);
     position: relative;
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    border: 7.5px solid rgba(255, 255, 255, .1);
-    border-top: 7.5px solid #fff;
-    animation: animate 1.5s infinite linear;
 }
 
-@keyframes animate {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
+#loader-content p:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid var(--secondaryColor);
+}
+
+.progress-bar {
+    background-color: var(--secondaryColor);
+    transition: all 0s;
 }
 
 h2 {
