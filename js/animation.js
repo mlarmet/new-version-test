@@ -39,14 +39,14 @@ var progress = setInterval(function() {
 
 $(window).on("load", function() {
 
-    /*clearInterval(progress);
+    clearInterval(progress);
     $('.progress-bar').css("width", "100%");
     $('#loader-content p').text("100%");
-    $("#loader-content p").css("margin-left", "calc(100% - 25px)");*/
-    /*setTimeout(function() {
-        $("#loader").fadeOut(250);
-        $("html").css("overflow-y", "scroll");
-    }, 250);*/
+    $("#loader-content p").css("margin-left", "calc(100% - 25px)");
+
+    $("#loader").fadeOut(250);
+    $("html").css("overflow-y", "scroll");
+
 
     //nav();
 
