@@ -9,6 +9,7 @@
     --gradientColor: #161928;
     --fontColor: #161928;
     --otherFontColor: #fbfcfc;
+    --reseauxColor: #696b75;
     --largeur: 50%;
     --max-largeur: 1152px;
 }
@@ -110,7 +111,6 @@ main {
     left: 0;
     width: 100%;
     overflow: hidden;
-    line-height: 0;
 }
 
 #shape svg {
@@ -213,7 +213,7 @@ a:hover {
 #work {
     display: inline-block;
     padding: 0.5rem 1rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     background-color: var(--secondaryColor);
     color: var(--primaryColor);
 }
@@ -253,4 +253,20 @@ a:hover {
 #projets {
     position: relative;
     padding-top: 4rem;
+}
+
+#reseaux-sociaux {
+    display: flex;
+    align-items: center;
+    margin-top: 6rem;
+    position: relative;
+    z-index: 1;
+}
+
+#reseaux-sociaux a {
+    margin-right: 2rem;
+}
+
+#reseaux-sociaux i {
+    color: var(--reseauxColor);
 }
