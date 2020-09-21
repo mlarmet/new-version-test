@@ -28,17 +28,19 @@ $(window).on("load", function() {
         $(this).addClass("active");
     });
 
-    $("#menu").unbind().click(function() {
-        fait = true;
-        if ($("#navigation").is(":visible")) {
-            $("#navigation").fadeOut(250);
-            $("#menu").removeClass("change");
-            $("html").css("overflow-y", "auto");
-        } else {
-            $("#navigation").fadeIn(250);
-            $("#menu").addClass("change");
-            $("html").css("overflow-y", "hidden");
+    $("#menu, .nav-link").unbind().click(function() {
+        if (window.matchMedia("(max-width: 968px)").matches) {
+            fait = true;
+            if ($("#navigation").is(":visible")) {
+                $("#navigation").fadeOut(250);
+                $("#menu").removeClass("change");
+                $("html").css("overflow-y", "auto");
+            } else {
+                $("#navigation").fadeIn(250);
+                $("#menu").addClass("change");
+                $("html").css("overflow-y", "hidden");
 
+            }
         }
     });
 
