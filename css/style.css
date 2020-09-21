@@ -14,9 +14,9 @@
 }
 
 :root {
-    --primaryColor: #161928;
-    --secondaryColor: #ec2424;
-    --fontColor: #161928;
+    --primaryColor: #263547;
+    --secondaryColor: #fd4345;
+    --fontColor: #263547;
     --otherFontColor: #fbfcfc;
     --reseauxColor: #696b75;
     --largeur: 55%;
@@ -398,6 +398,7 @@ a:hover {
         padding: 0!important;
         padding-bottom: 0.5rem!important;
         border-bottom: 2px solid var(--secondaryColor);
+        transition: all 250ms ease-in-out;
     }
     .nav-link:hover {
         color: var(--secondaryColor);
@@ -448,6 +449,9 @@ a:hover {
     #menu.change .bar:nth-child(3) {
         transform: rotate(45deg);
         top: 10px;
+    }
+    #projets {
+        padding-top: 1rem;
     }
 }
 
