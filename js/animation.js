@@ -1,4 +1,4 @@
-//var dots = 3;
+var scrollLimit = 100;
 var fait = false;
 var mobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
 
@@ -76,6 +76,13 @@ function nav() {
 };
 
 $(window).scroll(function() {
-
+    if (window.matchMedia("(min-width: 812px)").matches) {
+        if (document.body.scrollTop > scrollLimit ||
+            document.documentElement.scrollTop > scrollLimit) {
+            $("#navigation").css("background-color", "rgba(38, 53, 71, 1)");
+        } else {
+            $("#navigation").css("background-color", "var(--primaryColorA)");
+        }
+    }
 
 });

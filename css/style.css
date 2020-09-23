@@ -15,6 +15,7 @@
 
 :root {
     --primaryColor: #263547;
+    --primaryColorA: rgba(38, 53, 71, 0.95);
     --secondaryColor: #fd4345;
     --fontColor: #263547;
     --otherFontColor: #fdfdfd;
@@ -22,6 +23,21 @@
     --largeur: 55%;
     --min-largeur: 768px;
     --max-largeur: 1140px;
+}
+
+@keyframes wave {
+    0% {
+        width: calc(194% + 1.3px);
+        height: 400px;
+    }
+    50% {
+        width: calc(225% + 1.3px);
+        height: 450px;
+    }
+    100% {
+        width: calc(194% + 1.3px);
+        height: 400px;
+    }
 }
 
 html {
@@ -40,6 +56,52 @@ body p {
     text-align: justify;
 }
 
+header {
+    height: 900px;
+    padding-top: 58px;
+}
+
+header:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 900px;
+    top: -58px;
+    left: 0;
+    z-index: -1;
+    transform: rotateY(180deg);
+    background-image: url("../images/bg.jpg");
+    background-size: cover;
+    background-position: right;
+    background-position-Y: 58px
+}
+
+header,
+footer {
+    color: var(--otherFontColor);
+}
+
+#header-main-content,
+footer {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    /*background-color: var(--primaryColor);*/
+}
+
+#header-main-content {
+    background-color: var(--primaryColorA);
+}
+
+main {
+    margin-top: -11rem;
+    padding-bottom: 1rem;
+}
+
+section {
+    position: relative;
+}
+
 .page-largeur {
     min-width: var(--min-largeur);
     width: var(--largeur);
@@ -48,6 +110,34 @@ body p {
     margin-right: auto;
     position: relative;
 }
+
+section h2:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 50px;
+    background-color: var(--primaryColor);
+}
+
+h2 {
+    font-family: 'LS';
+    font-size: 40px;
+}
+
+a,
+a:hover {
+    color: var(--otherFontColor);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.25px;
+    font-size: 15px;
+    font-family: 'TW-b';
+}
+
+
+/*-------------LOADER PAGE-----------------------------*/
 
 #loader {
     position: fixed;
@@ -77,52 +167,11 @@ body p {
     border-top-color: var(--secondaryColor);
 }
 
-h2 {
-    font-family: 'LS';
-    font-size: 40px;
-}
 
-section {
-    position: relative;
-}
+/*---------------------------------------------------*/
 
-section h2:after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    border-radius: 50px;
-    background-color: var(--primaryColor);
-}
 
-header {
-    height: 900px;
-}
-
-header,
-footer {
-    color: var(--otherFontColor);
-}
-
-main {
-    margin-top: -11rem;
-}
-
-@keyframes wave {
-    0% {
-        width: calc(194% + 1.3px);
-        height: 400px;
-    }
-    50% {
-        width: calc(225% + 1.3px);
-        height: 450px;
-    }
-    100% {
-        width: calc(194% + 1.3px);
-        height: 400px;
-    }
-}
+/*-------------SHAPE DIVIDER-------------------------*/
 
 #shape {
     position: absolute;
@@ -146,24 +195,21 @@ main {
     transform: scale(1.01);
 }
 
-#header-main-content,
-footer {
-    overflow: hidden;
-    position: relative;
-    height: 100%;
-    background-color: var(--primaryColor);
-}
+
+/*---------------------------------------------------*/
 
 
-/*HEADER NAV*/
+/*-------------HEADER NAVIGATION---------------------*/
 
 #navigation {
-    background-color: var(--primaryColor);
+    /* background-color: var(--primaryColor); */
+    background-color: var(--primaryColorA);
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 998;
+    transition: all 250ms ease-in-out;
 }
 
 .navbar {
@@ -177,19 +223,6 @@ footer {
 .navbar-nav {
     display: flex;
     flex-flow: row nowrap;
-}
-
-
-/*-----*/
-
-a,
-a:hover {
-    color: var(--otherFontColor);
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1.25px;
-    font-size: 15px;
-    font-family: 'TW-b';
 }
 
 .nav-link,
@@ -218,6 +251,12 @@ a:hover {
 .nav-link:hover:after {
     transform: scaleY(1);
 }
+
+
+/*---------------------------------------------------*/
+
+
+/*-------------------HEADER--------------------------*/
 
 #cv,
 #work {
@@ -249,24 +288,27 @@ a:hover {
     height: 100%;
 }
 
-#info-text {
+#info-text,
+#info-photo {
     position: absolute;
     top: 25%;
 }
 
+#info-text {
+    z-index: 1;
+}
+
+#info-text h2,
 #info-text p {
     margin: 0;
 }
 
 #info-text h2 {
     font-size: 50px;
-    margin: 0;
 }
 
 #info-photo {
-    position: absolute;
     left: calc(100% - 281px);
-    top: 25%;
     transform: scale(1.4);
     overflow: hidden;
 }
@@ -275,6 +317,12 @@ a:hover {
     width: 100%;
     transform: rotate(2deg);
 }
+
+
+/*---------------------------------------------------*/
+
+
+/*-------------------      --------------------------*/
 
 #projets {
     padding-top: 4rem;
@@ -289,8 +337,8 @@ a:hover {
 }
 
 .reseaux-sociaux a {
-    margin-right: 2rem;
     position: relative;
+    margin-right: 2rem;
     text-transform: lowercase;
 }
 
@@ -303,10 +351,6 @@ a:hover {
     color: var(--otherFontColor);
 }
 
-.reseaux-sociaux a:hover {
-    text-decoration: none;
-}
-
 .reseaux-sociaux a:nth-child(2) span:after,
 .reseaux-sociaux a:nth-child(4) span:after {
     left: 35px;
@@ -314,9 +358,9 @@ a:hover {
 
 .reseaux-sociaux span {
     display: block;
-    margin-top: 1rem;
     position: absolute;
     left: -1.5rem;
+    margin-top: 1rem;
     padding: 0.5rem;
     border-radius: 50px;
     color: var(--reseauxColor);
@@ -345,43 +389,22 @@ a:hover {
         --min-largeur: unset;
         --largeur: 80%;
     }
-    #info-photo img {
-        width: 192px;
-    }
-    #info-photo {
-        left: calc(100% - 200px);
-        top: 22.5%;
-    }
-    #info-text {
-        top: 22.5%;
-    }
-    #info-text h2 {
-        font-size: 40px;
-    }
-    h2 {
-        font-size: 30px;
-    }
     body p {
         font-size: 17.5px;
     }
-    header {
+    header,
+    header:before {
         height: 720px;
+        padding-top: 0;
     }
-    .reseaux-sociaux {
-        margin-top: 4rem;
+    h2 {
+        font-size: 30px;
     }
     #navigation,
     .navbar {
         height: 100%;
         width: 100%;
-    }
-    #navigation {
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
-    .navbar {
-        min-width: unset;
+        background-color: var(--primaryColor);
     }
     .navbar,
     .navbar-nav {
@@ -405,11 +428,6 @@ a:hover {
     }
     .nav-link:after {
         content: none;
-    }
-    #cv {
-        margin-top: 2rem;
-        font-size: 17.5px;
-        text-align: center;
     }
     #menu {
         position: fixed;
@@ -450,20 +468,49 @@ a:hover {
         transform: rotate(45deg);
         top: 10px;
     }
+    #info-text {
+        top: 22.5%;
+    }
+    #info-text h2 {
+        font-size: 40px;
+    }
+    #info-photo img {
+        width: 192px;
+    }
+    #info-photo {
+        left: calc(100% - 192px);
+        top: 22.5%;
+    }
+    .reseaux-sociaux {
+        margin-top: 4rem;
+    }
+    #cv {
+        margin-top: 2rem;
+        font-size: 17.5px;
+        text-align: center;
+    }
     #projets {
         padding-top: 1rem;
     }
 }
 
-@media screen and (max-width: 680px) {
-     :root {
-        --largeur: 85%;
+@media screen and (max-width: 656px) {
+    header,
+    header:before {
+        height: 620px;
     }
-}
-
-@media screen and (max-width: 615px) {
-    #info-photo {
-        display: none;
+    body p {
+        font-size: 17.5px;
+    }
+    h2 {
+        font-size: 25px;
+    }
+    #shape {
+        width: 200%;
+        left: -20%;
+    }
+    #info-text h2 {
+        font-size: 30px;
     }
     #info-text {
         position: relative;
@@ -473,6 +520,9 @@ a:hover {
         align-items: center;
         justify-content: center;
         text-align: center;
+    }
+    #info-photo {
+        display: none;
     }
     .reseaux-sociaux a {
         margin: 0 1rem;
@@ -489,22 +539,6 @@ a:hover {
     }
     .reseaux-sociaux a:nth-child(4) span:after {
         left: 105px;
-    }
-    header {
-        height: 620px;
-    }
-    #shape {
-        width: 200%;
-        left: -20%;
-    }
-    body p {
-        font-size: 17.5px;
-    }
-    h2 {
-        font-size: 25px;
-    }
-    #info-text h2 {
-        font-size: 30px;
     }
 }
 
