@@ -15,7 +15,7 @@
 
 :root {
     --primaryColor: #263547;
-    --primaryColorA: rgba(38, 53, 71, 0.95);
+    --primaryColorA: rgba(38, 53, 71, 0.9);
     --secondaryColor: #fd4345;
     --fontColor: #263547;
     --otherFontColor: #fdfdfd;
@@ -69,11 +69,11 @@ header:before {
     top: -58px;
     left: 0;
     z-index: -1;
-    transform: rotateY(180deg);
+    transform: rotateY(0deg);
     background-image: url("../images/bg.jpg");
     background-size: cover;
     background-position: right;
-    background-position-Y: 58px
+    background-position-Y: 58px;
 }
 
 header,
