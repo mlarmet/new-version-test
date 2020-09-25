@@ -5,13 +5,15 @@ var mobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.t
 $(document).ready(function() {
 
     $(".reseaux-sociaux span").fadeOut(0);
+});
 
-    AOS.init({
-        duration: 750,
-        disable: 'mobile',
-        once: true,
-    });
-
+AOS.init({
+    duration: 500,
+    easing: 'ease-in-out-back',
+    disable: 'mobile',
+    once: true,
+    //box trigger - window trigger
+    anchorPlacement: 'center-bottom'
 });
 
 $(window).on("load", function() {
@@ -23,13 +25,13 @@ $(window).on("load", function() {
 
     nav();
 
-    $(".nav-link").unbind().on("click", function() {
+    $(".nav-link").on("click", function() {
         $(".navbar-nav").find('.active').removeClass("active");
         $(this).addClass("active");
     });
 
-    $("#menu, .nav-link").unbind().click(function() {
-        if (window.matchMedia("(max-width: 968px)").matches) {
+    $("#menu, .nav-link").click(function() {
+        if (window.matchMedia("(max-width: 991px)").matches) {
             fait = true;
             if ($("#navigation").is(":visible")) {
                 $("#navigation").fadeOut(250);
@@ -44,16 +46,7 @@ $(window).on("load", function() {
         }
     });
 
-    if (!mobile) {
-        $(".reseaux-sociaux i").mouseenter(function() {
-            $(this).siblings("span").stop(true, false);
-            $(this).siblings("span").fadeIn(250);
-        }).mouseleave(function() {
-            $(this).siblings("span").stop(true, false);
-            $(this).siblings("span").fadeOut(250);
-        });
 
-    }
 });
 
 $(window).on("orientationchange resize", function() {
@@ -62,7 +55,7 @@ $(window).on("orientationchange resize", function() {
 
 
 function nav() {
-    if (window.matchMedia("(max-width: 968px)").matches) {
+    if (window.matchMedia("(max-width: 991px)").matches) {
         if (!fait) {
             fait = true;
             $("#navigation").fadeOut(0);
@@ -73,16 +66,25 @@ function nav() {
         $("#navigation").show();
         fait = false;
     }
+
+    if (!mobile) {
+        $(".reseaux-sociaux i").mouseenter(function() {
+            $(this).siblings("span").stop(true, false);
+            $(this).siblings("span").fadeIn(250);
+        }).mouseleave(function() {
+            $(this).siblings("span").stop(true, false);
+            $(this).siblings("span").fadeOut(250);
+        });
+
+    }
+
+
 };
 
 $(window).scroll(function() {
-    if (window.matchMedia("(min-width: 812px)").matches) {
-        if (document.body.scrollTop > scrollLimit ||
-            document.documentElement.scrollTop > scrollLimit) {
-            $("#navigation").css("background-color", "rgba(38, 53, 71, 1)");
-        } else {
-            $("#navigation").css("background-color", "var(--primaryColorA)");
-        }
-    }
+
+});
+
+$(window).scroll(function() {
 
 });
