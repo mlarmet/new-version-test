@@ -7,20 +7,22 @@ $(document).ready(function() {
     $(".reseaux-sociaux span").fadeOut(0);
 });
 
-AOS.init({
-    duration: 500,
-    easing: 'ease-in-out-back',
-    disable: 'mobile',
-    once: true,
-    //box trigger - window trigger
-    anchorPlacement: 'center-bottom'
-});
 
 $(window).on("load", function() {
 
+    $("html").animate({ scrollTop: 0 }, 10);
     setTimeout(function() {
         $("#loader").fadeOut(250);
+        AOS.init({
+            duration: 500,
+            disable: 'mobile',
+            easing: 'ease-in-out-back',
+            once: true,
+            //box trigger - window trigger
+            anchorPlacement: 'top-bottom'
+        });
         $("html").css("overflow-y", "auto");
+        $("html").css("scroll-behavior", "smooth");
     }, 250);
 
     nav();
@@ -53,8 +55,9 @@ $(window).on("orientationchange resize", function() {
     nav();
 });
 
-
 function nav() {
+
+
     if (window.matchMedia("(max-width: 991px)").matches) {
         if (!fait) {
             fait = true;
@@ -80,10 +83,6 @@ function nav() {
 
 
 };
-
-$(window).scroll(function() {
-
-});
 
 $(window).scroll(function() {
 
