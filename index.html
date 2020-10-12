@@ -17,11 +17,11 @@
     <link rel="preload" href="fonts/LeagueSpartan-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/TitilliumWeb-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/WorkSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
-
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&family=Work+Sans:wght@400;700&display=swap" /> -->
     <!-- CSS IMPORT -->
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="fa/css/all.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <!-- JS IMPORT -->
@@ -35,10 +35,10 @@
     <div id="loader">
         <div id="loader-content">
             <div class="d-flex justify-content-center">
-                <div class="spinner-border" role="status ">
+                <div class="spinner-border" role="status">
                 </div>
             </div>
-            <h2>Chargement...</h2>
+            <h1>Chargement...</h1>
         </div>
     </div>
 
@@ -123,8 +123,8 @@
     <main>
 
         <!------------ Début A propos --------->
-        <section class="" id="a-propos">
-            <div id="a-propos-container" data-aos-offset="250" class="container">
+        <section id="a-propos">
+            <div class="container" id="a-propos-container">
                 <div class="row">
                     <div id="a-propos-img" class="col-xl-3 col-lg-4">
                         <div id="a-propos-img-container">
@@ -137,7 +137,7 @@
                             acquérir une certaine expérience dans la programmation (création de plusieurs sites web avec les outils HTML, CSS ou encore JavaScript mais aussi d'autres langages comme le Java, le C…).
                         </p>
 
-                        <a id="cv" class="rounded-pill hover-fill" href="cv/cv_maxence_larmet.pdf " target="_blank " rel="noreferrer noopener ">Télécharger mon CV</a>
+                        <a id="cv" class="rounded-pill hover-fill" href="cv/cv_maxence_larmet.pdf" target="_blank" rel="noreferrer noopener">Télécharger mon CV</a>
 
                     </div>
                 </div>
@@ -146,24 +146,145 @@
         <!------------ Fin A propos ------------>
 
 
+        <!------------ Debut Projets ------------>
+        <section id="projets">
+            <div class="container" id="projets-container">
+                <div class="carousel slide" id="projects-carousel" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#projects-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#projects-carousel" data-slide-to="1"></li>
+                        <li data-target="#projects-carousel" data-slide-to="2"></li>
+                        <li data-target="#projects-carousel" data-slide-to="3"></li>
+                        <li data-target="#projects-carousel" data-slide-to="4"></li>
+                    </ol>
+                    <!-- /.carousel-indicators -->
+
+                    <div class="carousel-inner" role="listbox">
+
+                        <div class="carousel-item active">
+                            <a class="voir-projet" href="https://github.com/mlarmet/site-ppp" title="Voir le projet" target="blank">
+                                <div class="projet-slide" id="projets-un">
+                                    <img class="img-fluid" src="images/robots-programmes.png" alt="site projet medecine" title="Robots programmés" />
+                                    <div class="carousel-caption">
+                                        <h3>Robots programmés&ensp;<i class="fas fa-external-link-alt"></i></h3>
+                                        <ul>
+                                            <li>
+                                                <div><em>Conception</em> et <em>réalisation</em> d'un <em>site web</em> sur le lien entre santé et informatique.<br />Projet encadré lors du 1<sup>er</sup> semestre du DUT Informatique.
+                                                </div>
+                                            </li>
+                                            <li>Outils : HTML, CSS, Bootstrap</li>
+                                            <li>Acquis : compétences web, travail en équipe</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="projet-slide" id="projets-deux">
+                                <img class="img-fluid" src="images/python_logo.png" alt="illustration projets python" title="Jeu en python" />
+                                <div class="carousel-caption">
+                                    <h3>Jeux en Python</h3>
+                                    <ul>
+                                        <li>
+                                            <div>Réalisation de plusieurs petits <em>jeux</em> en <em>python</em> (en mode texte) tel que : pendu, morpion
+                                            </div>
+                                        </li>
+                                        <li>Outils : Python (3.7) avec le logiciel Visual Studio Code</li>
+                                        <li>Acquis : persévérance, autonomie</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <a class="voir-projet" href="https://github.com/mlarmet/casse-brique" title="Voir le projet" target="blank">
+                                <div class="projet-slide" id="projets-trois">
+
+                                    <img class="img-fluid" src="images/casse-brique.png" alt="illustration jeu casse brique" title="Casse brique" />
+                                    <div class="carousel-caption">
+                                        <h3>Casse brique&ensp;<i class="fas fa-external-link-alt"></i></h3>
+                                        <ul>
+                                            <li>
+                                                <div>Conception et réalisation d'un <em>jeu vidéo 2D</em> pour le projet de fin d'année de la spécialité ISN du Baccalauréat.</div>
+                                            </li>
+                                            <li>Outils : Python (3.6) avec le module pygame</li>
+                                            <li>Acquis : gestion du temps, travail en équipe</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="projet-slide" id="projets-quatre">
+                                <img class="img-fluid" src="images/tictactoe.png" alt="illustration jeu tic tac toe" title="Tic Tac Toe" />
+                                <div class="carousel-caption">
+                                    <h3>Tic Tac Toe</h3>
+                                    <ul>
+                                        <li>
+                                            <div><em>Développement</em> d'une application <em> Android</em>. Jeu du tic tac toe.</div>
+                                        </li>
+                                        <li>Outils : Java avec le logiciel Android Studio, XML</li>
+                                        <li>Acquis : initiation à la création d'application, autonomie</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="projet-slide" id="projets-cinq">
+                                <img class="img-fluid" src="images/jan_computer.png" alt="site jan computer" title="JAN Computer games" />
+                                <div class="carousel-caption">
+                                    <h3>JAN</h3>
+                                    <ul>
+                                        <li>
+                                            <div><em>Réalisation</em> d'un site web sur les jeux vidéos pour un projet d'anglais.</div>
+                                        </li>
+                                        <li>Outils : HTML, CSS, Bootstrap</li>
+                                        <li>Acquis : apprentissage de l'anglais, compétences web</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.carousel-inner -->
+
+                    <a href="#projects-carousel" class="carousel-control-prev" data-slide="prev">
+                        <!-- <span class="carousel-control-prev-icon"></span> -->
+                        <i class="fas fa-arrow-left fa-2x"></i>
+                        <span class="sr-only" aria-hidden="true">Prev</span>
+                    </a>
+                    <a href="#projects-carousel" class="carousel-control-next" data-slide="next">
+                        <!-- <span class="carousel-control-next-icon"></span> -->
+                        <i class="fas fa-arrow-right fa-2x"></i>
+                        <span class="sr-only" aria-hidden="true">Next</span>
+                    </a>
+
+                </div>
+                <!-- /.carousel -->
+            </div>
+            <!-- /.container -->
+        </section>
+        <!------------ Fin Projets ------------>
 
 
-        <section class="" id="projets">
-            <div class="container">
-                <h2>Mes Projets</h2>
-                <div id="projets-l1" class="row">
-                    <article class="reverse-color col">
+
+
+        <!------------ Debut Competences ------------>
+        <section id="competences">
+            <div class="container" id="competences-container">
+                <h2>Mes Compétences</h2>
+                <div class="row">
+                    <article class="reverse-color col-lg">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At architecto quasi repellendus accusamus voluptates labore eos animi magnam doloremque pariatur, rerum praesentium magni inventore maiores nisi ex! Libero, optio consequatur.</p>
-                        <a class="voir-projet rounded-pill hover-fill" href="#contact">Voir le projet</a>
                     </article>
 
-                    <article class="reverse-color col">
+                    <article class="reverse-color col-lg">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At architecto quasi repellendus accusamus voluptates labore eos animi magnam doloremque pariatur, rerum praesentium magni inventore maiores nisi ex! Libero, optio consequatur.</p>
-                        <a class="voir-projet rounded-pill hover-fill" href="#contact">Voir le projet</a>
                     </article>
-                    <article class="reverse-color col">
+                    <article class="reverse-color col-lg">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At architecto quasi repellendus accusamus voluptates labore eos animi magnam doloremque pariatur, rerum praesentium magni inventore maiores nisi ex! Libero, optio consequatur.</p>
-                        <a class="voir-projet rounded-pill hover-fill" href="#contact">Voir le projet</a>
                     </article>
 
                 </div>
@@ -172,16 +293,7 @@
             </div>
 
         </section>
-
-        <section class="reverse-color" id="competences">
-            <div class="container">
-                <h2>Mes Projets</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat temporibus a distinctio minima quis, quisquam aspernatur nemo assumenda sequi accusantium, quibusdam, maiores voluptatibus impedit quam. Debitis autem esse at consequatur?
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis consectetur explicabo tempore rerum, delectus architecto quaerat fuga. Architecto harum debitis tempore, quam dolore unde! Ipsam adipisci veniam velit aspernatur iure?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo doloribus consectetur facilis id debitis laboriosam modi exercitationem ut, unde impedit et repellat facere alias deleniti molestiae ullam quaerat, quod magnam!</p>
-            </div>
-
-        </section>
+        <!------------ Fin Competences ------------>
 
         <section id="last">
             <div class="container">
@@ -248,7 +360,7 @@
     <script>
     </script>
 
-    <script src="js/animation.js "></script>
+    <script src="js/animation.js"></script>
 
 </body>
 

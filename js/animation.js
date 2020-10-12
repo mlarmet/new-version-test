@@ -27,6 +27,8 @@ $(window).on("load", function() {
 
     nav();
 
+    $('.carousel').carousel('pause');
+
     $(".nav-link").on("click", function() {
         $(".navbar-nav").find('.active').removeClass("active");
         $(this).addClass("active");
