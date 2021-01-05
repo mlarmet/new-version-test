@@ -17,11 +17,15 @@
     <link rel="preload" href="fonts/LeagueSpartan-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/TitilliumWeb-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/WorkSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&family=Work+Sans:wght@400;700&display=swap" /> -->
+
     <!-- CSS IMPORT -->
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="fa/css/all.css" />
-    <link href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <!-- JS IMPORT -->
@@ -63,7 +67,7 @@
                         <li class="nav-item"> <a class="nav-link" href="#a-propos">A propos</a> </li>
                         <li class="nav-item"> <a class="nav-link" href="#projets">Projets</a> </li>
                         <li class="nav-item"> <a class="nav-link" href="#parcours">Parcours</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#scrollto">Compétences</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#competences">Compétences</a> </li>
                         <li class="nav-item"> <a class="nav-link" href="#competences">Contact</a> </li>
                     </ul>
                 </nav>
@@ -124,7 +128,7 @@
 
         <!------------ Début A propos --------->
         <section id="a-propos">
-            <div class="container" id="a-propos-container">
+            <div data-aos="slide-up" data-aos-easing="custom-easing" class="container" id="a-propos-container">
                 <div class="row">
                     <div id="a-propos-img" class="col-xl-3 col-lg-4">
                         <div id="a-propos-img-container">
@@ -145,10 +149,9 @@
         </section>
         <!------------ Fin A propos ------------>
 
-
         <!------------ Debut Projets ------------>
         <section id="projets">
-            <div class="container" id="projets-container">
+            <div data-aos="zoom-in-up" data-aos-easing="custom-easing" data-aos-offset="200" class="container" id="projets-container">
                 <div class="carousel slide" id="projects-carousel" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#projects-carousel" data-slide-to="0" class="active"></li>
@@ -268,99 +271,82 @@
         </section>
         <!------------ Fin Projets ------------>
 
+        <!------------ Debut Parcours ------------>
+        <section id="parcours">
+            <div class="container" id="parcours-container">
+                <h2>Mon parcours</h2>
+                <div id="parcours-box">
+                    <article data-aos="fade-right" data-aos-easing="custom-easing" class="col-lg">
+                        <h3>Formations</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, doloribus a! Quis natus ut, minus consequuntur praesentium nesciunt culpa voluptatem, saepe, facere ad rerum corrupti iure dolores porro ipsam illum.</p>
+                    </article>
 
+                    <article data-aos="fade-left" data-aos-easing="custom-easing" class="col-lg">
+                        <h3>Expériences professionnelles</h3>
+                        <p>Lsam velit veniam iusto corporis ad magnam nulla. Ipsum distinctio sit harum. Praesentium, tempore? Incidunt omnis amet eligendi illum eos quibusdam tempore, modi quis maxime nisi nesciunt, quidem expedita! Nihil eum unde necessitatibus
+                            earum quae? Dolor!</p>
+                    </article>
+                </div>
 
+            </div>
+
+        </section>
+        <!------------ Fin Parcours ------------>
 
         <!------------ Debut Competences ------------>
         <section id="competences">
             <div class="container" id="competences-container">
                 <h2>Mes Compétences</h2>
                 <div class="row">
-                    <article class="reverse-color col-lg">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At architecto quasi repellendus accusamus voluptates labore eos animi magnam doloremque pariatur, rerum praesentium magni inventore maiores nisi ex! Libero, optio consequatur.</p>
+                    <article data-aos="flip-right" data-aos-easing="custom-easing" class="reverse-color col-lg">
+                        <div class="circle rounded-circle"><i class="fas fa-file-code fa-2x"></i></div>
+                        <h3>Web</h3>
+                        <div>
+                            <p>HTML / CSS (Boostrap)</p>
+                            <p>Javascript, Jquery</p>
+                            <p>PHP (CodeIgniter)</p>
+                        </div>
                     </article>
 
-                    <article class="reverse-color col-lg">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At architecto quasi repellendus accusamus voluptates labore eos animi magnam doloremque pariatur, rerum praesentium magni inventore maiores nisi ex! Libero, optio consequatur.</p>
+                    <article data-aos="flip-up" data-aos-easing="custom-easing" class="reverse-color col-lg">
+                        <div class="circle rounded-circle"><i class="fas fa-terminal"></i></div>
+                        <h3>Programmation</h3>
+                        <div>
+                            <p>Java</p>
+                            <p>Langage C</p>
+                            <p>Python</p>
+                        </div>
                     </article>
-                    <article class="reverse-color col-lg">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At architecto quasi repellendus accusamus voluptates labore eos animi magnam doloremque pariatur, rerum praesentium magni inventore maiores nisi ex! Libero, optio consequatur.</p>
+                    <article data-aos="flip-left" data-aos-easing="custom-easing" class="reverse-color col-lg">
+                        <div class="circle rounded-circle"><i class="fas fa-database fa-2x"></i></div>
+                        <h3>Base de données</h3>
+                        <div>
+                            <p>PostgreSQL</p>
+                            <p>MySQL</p>
+                            <p>&nbsp;</p>
+                        </div>
                     </article>
 
                 </div>
-
-
             </div>
 
         </section>
         <!------------ Fin Competences ------------>
 
-        <section id="last">
-            <div class="container">
-                <h2>Mes Projets</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat temporibus a distinctio minima quis, quisquam aspernatur nemo assumenda sequi accusantium, quibusdam, maiores voluptatibus impedit quam. Debitis autem esse at consequatur?
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis consectetur explicabo tempore rerum, delectus architecto quaerat fuga. Architecto harum debitis tempore, quam dolore unde! Ipsam adipisci veniam velit aspernatur iure?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo doloribus consectetur facilis id debitis laboriosam modi exercitationem ut, unde impedit et repellat facere alias deleniti molestiae ullam quaerat, quod magnam!</p>
-            </div>
 
-        </section>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+
     </main>
 
     <footer>
         <div class="container">
             <h2>Contact</h2>
-
-
             <p id="copyright">Copyright &copy; 2020 Tous droits réservés.</p>
         </div>
 
     </footer>
 
-
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-    </script>
-
-    <script src="js/animation.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 

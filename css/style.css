@@ -16,8 +16,8 @@
  :root {
     --primaryColor: #263547;
     --secondaryColor: #fd4345;
-    --fontColor: #fff;
-    --fillColor: #f3f3f3;
+    --white: #FFF;
+    --fillColor: #F3F3F3;
     --reseauxColor: #696b75;
 }
 
@@ -27,7 +27,7 @@ html {
 
 body {
     color: var(--primaryColor);
-    background-color: var(--fontColor);
+    background-color: var(--white);
     font-size: 100%;
 }
 
@@ -45,7 +45,7 @@ header {
 
 header,
 footer {
-    color: var(--fontColor);
+    color: var(--white);
 }
 
 #header-main-content,
@@ -57,7 +57,8 @@ footer {
 }
 
 main {
-    margin-top: -11em;
+    position: relative;
+    top: -11em;
 }
 
 section,
@@ -66,6 +67,11 @@ footer {
     padding-top: 72px;
     padding-bottom: 72px;
     overflow: hidden;
+}
+
+footer {
+    position: relative;
+    margin-top: -11em;
 }
 
 section p {
@@ -82,19 +88,29 @@ section h2:after {
     background-color: var(--secondaryColor);
 }
 
-h2 {
-    font-size: 2em;
-}
-
+h1,
 h2,
-h1 {
+h3 {
     position: relative;
     font-family: 'LS';
     z-index: 1;
     width: fit-content;
 }
 
-a {
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.5em;
+    /* margin-bottom: 0.5em; */
+}
+
+[data-aos][data-aos][data-aos-easing="custom-easing"] {
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+a:not(.voir-projet) {
     text-transform: capitalize;
     font-weight: 700;
     letter-spacing: 1.25px;
@@ -103,7 +119,7 @@ a {
 
 a,
 a:hover {
-    color: var(--fontColor);
+    color: var(--white);
     text-decoration: none;
     transition: all 250ms ease-in-out;
 }
@@ -115,7 +131,7 @@ a:hover {
     background: linear-gradient(55deg, var(--secondaryColor) 50%, #fff 50%);
     background-size: 300%;
     background-position: 100%;
-    transition: all 500ms ease-in-out!important;
+    transition: all 500ms ease!important;
 }
 
 .hover-fill:hover {
@@ -129,7 +145,7 @@ a:hover {
 
 .reverse-color {
     background-color: var(--primaryColor);
-    color: var(--fontColor);
+    color: var(--white);
 }
 
 
@@ -154,7 +170,7 @@ a:hover {
 
 #loader h1 {
     font-size: 2em;
-    color: var(--fontColor);
+    color: var(--white);
     margin-top: 2.5em;
 }
 
@@ -162,7 +178,7 @@ a:hover {
     width: 4em;
     height: 4em;
     border-width: 0.33em;
-    border-color: var(--fontColor);
+    border-color: var(--white);
     border-top-color: var(--secondaryColor);
     transition: all 250ms ease-in-out;
 }
@@ -225,7 +241,7 @@ a:hover {
 
 .navbar {
     margin: 0 auto;
-    padding: 1em 0;
+    padding: 15px;
     overflow-y: auto;
 }
 
@@ -389,7 +405,7 @@ a:hover {
 
 .reseaux-sociaux i:hover,
 #scroll-down i:hover {
-    color: var(--fontColor);
+    color: var(--white);
 }
 
 .reseaux-sociaux a:nth-child(2) span:after,
@@ -399,15 +415,17 @@ a:hover {
 
 .reseaux-sociaux span {
     display: block;
+    opacity: 0;
     position: absolute;
     left: -1.5em;
     margin-top: 1em;
     padding: 0.5em 1em;
     border-radius: 50em;
     color: var(--primaryColor);
-    background-color: var(--fontColor);
+    background-color: var(--white);
     box-shadow: 0 0 20px rgba(0, 0, 0, .1);
     font-family: 'WS-r';
+    transition: all 250ms ease-in-out;
 }
 
 .reseaux-sociaux span:after {
@@ -418,7 +436,7 @@ a:hover {
     top: -5px;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 5px solid var(--fontColor);
+    border-bottom: 5px solid var(--white);
 }
 
 
@@ -435,7 +453,7 @@ a:hover {
     margin: 0;
     padding: 15px 0;
     border-radius: 10px;
-    background-color: var(--fontColor);
+    background-color: var(--white);
     box-shadow: 0 0 20px rgba(0, 0, 0, .1);
 }
 
@@ -472,7 +490,7 @@ a:hover {
 }
 
 #cv:hover {
-    color: var(--fontColor);
+    color: var(--white);
 }
 
 
@@ -487,46 +505,46 @@ a:hover {
 }
 
 #projets h3 {
+    margin: 0 auto;
     margin-bottom: 0.5em;
-    font-family: 'LS';
 }
 
 
 /*.voir-projet {
-    color: var(--secondaryColor);
-    border: 2px solid var(--secondaryColor);
-    padding: 0.5em 1em;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    z-index: 2;
+color: var(--secondaryColor);
+border: 2px solid var(--secondaryColor);
+padding: 0.5em 1em;
+position: absolute;
+bottom: 10px;
+right: 10px;
+z-index: 2;
 }
 
 .voir-projet:hover {
-    color: white;
+color: white;
 }
 
 .voir-projet.hover-fill {
-    background: linear-gradient(55deg, var(--secondaryColor) 50%, white 50%);
-    background-size: 300%;
-    background-position: 100%;
+background: linear-gradient(55deg, var(--secondaryColor) 50%, white 50%);
+background-size: 300%;
+background-position: 100%;
 }
 
 .voir-projet.hover-fill:hover {
-    background-position: 0;
+background-position: 0;
 }*/
 
 .carousel-indicators li {
-    background-color: var(--fontColor);
+    background-color: var(--white);
 }
 
 
 /*.carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23263547' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23263547' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
 }
 
 .carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23263547' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23263547' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
 }*/
 
 .carousel-control-next,
@@ -551,7 +569,7 @@ a:hover {
     bottom: 0;
     right: 0;
     text-align: center;
-    color: var(--fontColor);
+    color: var(--white);
     z-index: 0;
 }
 
@@ -588,27 +606,80 @@ a:hover {
 /*-----------------------------------------------------------------------------------------------------*/
 
 
+/*---------------------------------------------------------------------PARCOURS PRO-------------------*/
+
+#parcours {
+    background-color: var(--fillColor);
+}
+
+#parcours-box {
+    margin-top: 3em;
+}
+
+#parcours-container article {
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    padding: 15px;
+    border-radius: 10px;
+    background-color: var(--white);
+}
+
+#parcours-container article:nth-child(1) {
+    margin-bottom: 30px;
+}
+
+#parcours-container article p {
+    margin-bottom: 0;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+
 /*---------------------------------------------------------------sSECTION COMPETENCES-------------------*/
 
 #competences-container .row {
-    justify-content: space-between;
-    margin-top: 2em;
+    justify-content: space-evenly;
+    margin-top: 3em;
+    /*margin-left: 0;
+    margin-right: 0; */
 }
 
 #competences-container article {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    margin: 0 10px;
+    justify-content: center;
+    margin: 0 15px;
+    margin-bottom: 15px;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .1);
-    min-height: 350px;
 }
 
-#competences-container article p {
-    margin: 0;
+
+/* #competences-container article p {
+margin: 0;
+} */
+
+#competences-container h3 {
+    margin: 1.25em 0;
+}
+
+.circle {
+    background-color: var(--white);
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle i {
+    color: var(--primaryColor);
+}
+
+.fa-terminal {
+    font-size: 1.25em;
 }
 
 
@@ -848,7 +919,7 @@ a:hover {
     }
     .reseaux-sociaux i,
     #scroll-down i {
-        color: var(--fontColor);
+        color: var(--white);
         font-size: 1.75em;
     }
     .reseaux-sociaux span {
@@ -886,7 +957,8 @@ a:hover {
     .carousel-caption {
         position: relative;
         width: calc(100% + 1.3px);
-        padding: 1em;
+        padding: 2em 1em;
+        min-height: 20em;
     }
     .carousel-item {
         position: relative;
@@ -915,7 +987,8 @@ a:hover {
 }
 
 @media screen and (max-height: 550px) {
-    .nav-link {
+    .nav-link,
+    .nav-link:hover {
         margin-bottom: 1.5em;
     }
 }
