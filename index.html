@@ -21,10 +21,11 @@
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&family=Work+Sans:wght@400;700&display=swap" /> -->
 
     <!-- CSS IMPORT -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="fa/css/all.css" />
 
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
@@ -63,12 +64,12 @@
                 <nav class="container navbar">
                     <p class="portfolio" id="p2">Portfolio</p>
                     <ul class="navbar-nav">
-                        <li class="nav-item"> <a class="nav-link active" href="#">Accueil</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#a-propos">A propos</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#projets">Projets</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#parcours">Parcours</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#competences">Compétences</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="#competences">Contact</a> </li>
+                        <li class="nav-item"> <a class="underline nav-link active" href="#">Accueil</a> </li>
+                        <li class="nav-item"> <a class="underline nav-link" href="#a-propos">A propos</a> </li>
+                        <li class="nav-item"> <a class="underline nav-link" href="#projets">Projets</a> </li>
+                        <li class="nav-item"> <a class="underline nav-link" href="#parcours">Parcours</a> </li>
+                        <li class="nav-item"> <a class="underline nav-link" href="#competences">Compétences</a> </li>
+                        <li class="nav-item"> <a class="underline nav-link" href="#contact">Contact</a> </li>
                     </ul>
                 </nav>
             </div>
@@ -128,21 +129,24 @@
 
         <!------------ Début A propos --------->
         <section id="a-propos">
-            <div data-aos="slide-up" data-aos-easing="custom-easing" class="container" id="a-propos-container">
-                <div class="row">
-                    <div id="a-propos-img" class="col-xl-3 col-lg-4">
-                        <div id="a-propos-img-container">
-                            <img id="a-propos-img-photo" class="img-fluid" src="images/profil.min.jpg" alt="photo-de-profil">
+            <div class="container" id="a-propos-container">
+                <h2 id="a-propos-title">A propos</h2>
+                <div data-aos="slide-up" data-aos-easing="custom-easing">
+
+                    <div class="row">
+                        <div id="a-propos-img" class="col-xl-3 col-lg-4">
+                            <div id="a-propos-img-container">
+                                <img id="a-propos-img-photo" class="img-fluid" src="images/profil.min.jpg" alt="photo-de-profil">
+                            </div>
                         </div>
-                    </div>
-                    <div id="a-propos-text" class="col">
-                        <h2>A propos</h2>
-                        <p>Bonjour,<br/>Je suis actuellement étudiant en DUT Informatique avec pour objectif de devenir développeur.<br /> Afin de valider mon dîplome, je dois effectuer un stage de 2 mois en entreprise.<br/> Grâce à ma formation, j'ai pu
-                            acquérir une certaine expérience dans la programmation (création de plusieurs sites web avec les outils HTML, CSS ou encore JavaScript mais aussi d'autres langages comme le Java, le C…).
-                        </p>
+                        <div id="a-propos-text" class="col">
+                            <p>Bonjour,<br/>Je suis actuellement étudiant en DUT Informatique avec pour objectif de devenir développeur.<br /> Afin de valider mon dîplome, je dois effectuer un stage de 2 mois en entreprise.<br/> Grâce à ma formation, j'ai
+                                pu acquérir une certaine expérience dans la programmation (création de plusieurs sites web avec les outils HTML, CSS ou encore JavaScript mais aussi d'autres langages comme le Java, le C…).
+                            </p>
 
-                        <a id="cv" class="rounded-pill hover-fill" href="cv/cv_maxence_larmet.pdf" target="_blank" rel="noreferrer noopener">Télécharger mon CV</a>
+                            <a id="cv" class="rounded-pill hover-fill" href="cv/cv_maxence_larmet.pdf" target="_blank" rel="noreferrer noopener">Télécharger mon CV</a>
 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -151,119 +155,122 @@
 
         <!------------ Debut Projets ------------>
         <section id="projets">
-            <div data-aos="zoom-in-up" data-aos-easing="custom-easing" data-aos-offset="200" class="container" id="projets-container">
-                <div class="carousel slide" id="projects-carousel" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#projects-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#projects-carousel" data-slide-to="1"></li>
-                        <li data-target="#projects-carousel" data-slide-to="2"></li>
-                        <li data-target="#projects-carousel" data-slide-to="3"></li>
-                        <li data-target="#projects-carousel" data-slide-to="4"></li>
-                    </ol>
-                    <!-- /.carousel-indicators -->
+            <div class="container" id="projets-container">
+                <h2>Mon parcours</h2>
+                <div data-aos="zoom-out-up" data-aos-easing="custom-easing" data-aos-anchor-placement="bottom-bottom">
 
-                    <div class="carousel-inner" role="listbox">
+                    <div class="carousel slide" id="projects-carousel" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#projects-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#projects-carousel" data-slide-to="1"></li>
+                            <li data-target="#projects-carousel" data-slide-to="2"></li>
+                            <li data-target="#projects-carousel" data-slide-to="3"></li>
+                            <li data-target="#projects-carousel" data-slide-to="4"></li>
+                        </ol>
+                        <!-- /.carousel-indicators -->
 
-                        <div class="carousel-item active">
-                            <a class="voir-projet" href="https://github.com/mlarmet/site-ppp" title="Voir le projet" target="blank">
-                                <div class="projet-slide" id="projets-un">
-                                    <img class="img-fluid" src="images/robots-programmes.png" alt="site projet medecine" title="Robots programmés" />
+                        <div class="carousel-inner" role="listbox">
+
+                            <div class="carousel-item active">
+                                <a class="voir-projet" href="https://github.com/mlarmet/site-ppp" title="Voir le projet" target="blank">
+                                    <div class="projet-slide" id="projets-un">
+                                        <img class="img-fluid" src="images/robots-programmes.png" alt="site projet medecine" title="Robots programmés" />
+                                        <div class="carousel-caption">
+                                            <h3>Robots programmés&ensp;<i class="fas fa-external-link-alt"></i></h3>
+                                            <ul>
+                                                <li>
+                                                    <div><em>Conception</em> et <em>réalisation</em> d'un <em>site web</em> sur le lien entre santé et informatique.<br />Projet encadré lors du 1<sup>er</sup> semestre du DUT Informatique.
+                                                    </div>
+                                                </li>
+                                                <li>Outils : HTML, CSS, Bootstrap</li>
+                                                <li>Acquis : compétences web, travail en équipe</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="projet-slide" id="projets-deux">
+                                    <img class="img-fluid" src="images/python_logo.png" alt="illustration projets python" title="Jeu en python" />
                                     <div class="carousel-caption">
-                                        <h3>Robots programmés&ensp;<i class="fas fa-external-link-alt"></i></h3>
+                                        <h3>Jeux en Python</h3>
                                         <ul>
                                             <li>
-                                                <div><em>Conception</em> et <em>réalisation</em> d'un <em>site web</em> sur le lien entre santé et informatique.<br />Projet encadré lors du 1<sup>er</sup> semestre du DUT Informatique.
+                                                <div>Réalisation de plusieurs petits <em>jeux</em> en <em>python</em> (en mode texte) tel que : pendu, morpion
                                                 </div>
                                             </li>
-                                            <li>Outils : HTML, CSS, Bootstrap</li>
-                                            <li>Acquis : compétences web, travail en équipe</li>
+                                            <li>Outils : Python (3.7) avec le logiciel Visual Studio Code</li>
+                                            <li>Acquis : persévérance, autonomie</li>
                                         </ul>
                                     </div>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="projet-slide" id="projets-deux">
-                                <img class="img-fluid" src="images/python_logo.png" alt="illustration projets python" title="Jeu en python" />
-                                <div class="carousel-caption">
-                                    <h3>Jeux en Python</h3>
-                                    <ul>
-                                        <li>
-                                            <div>Réalisation de plusieurs petits <em>jeux</em> en <em>python</em> (en mode texte) tel que : pendu, morpion
-                                            </div>
-                                        </li>
-                                        <li>Outils : Python (3.7) avec le logiciel Visual Studio Code</li>
-                                        <li>Acquis : persévérance, autonomie</li>
-                                    </ul>
-                                </div>
                             </div>
-                        </div>
 
-                        <div class="carousel-item">
-                            <a class="voir-projet" href="https://github.com/mlarmet/casse-brique" title="Voir le projet" target="blank">
-                                <div class="projet-slide" id="projets-trois">
+                            <div class="carousel-item">
+                                <a class="voir-projet" href="https://github.com/mlarmet/casse-brique" title="Voir le projet" target="blank">
+                                    <div class="projet-slide" id="projets-trois">
 
-                                    <img class="img-fluid" src="images/casse-brique.png" alt="illustration jeu casse brique" title="Casse brique" />
+                                        <img class="img-fluid" src="images/casse-brique.png" alt="illustration jeu casse brique" title="Casse brique" />
+                                        <div class="carousel-caption">
+                                            <h3>Casse brique&ensp;<i class="fas fa-external-link-alt"></i></h3>
+                                            <ul>
+                                                <li>
+                                                    <div>Conception et réalisation d'un <em>jeu vidéo 2D</em> pour le projet de fin d'année de la spécialité ISN du Baccalauréat.</div>
+                                                </li>
+                                                <li>Outils : Python (3.6) avec le module pygame</li>
+                                                <li>Acquis : gestion du temps, travail en équipe</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="projet-slide" id="projets-quatre">
+                                    <img class="img-fluid" src="images/tictactoe.png" alt="illustration jeu tic tac toe" title="Tic Tac Toe" />
                                     <div class="carousel-caption">
-                                        <h3>Casse brique&ensp;<i class="fas fa-external-link-alt"></i></h3>
+                                        <h3>Tic Tac Toe</h3>
                                         <ul>
                                             <li>
-                                                <div>Conception et réalisation d'un <em>jeu vidéo 2D</em> pour le projet de fin d'année de la spécialité ISN du Baccalauréat.</div>
+                                                <div><em>Développement</em> d'une application <em> Android</em>. Jeu du tic tac toe.</div>
                                             </li>
-                                            <li>Outils : Python (3.6) avec le module pygame</li>
-                                            <li>Acquis : gestion du temps, travail en équipe</li>
+                                            <li>Outils : Java avec le logiciel Android Studio, XML</li>
+                                            <li>Acquis : initiation à la création d'application, autonomie</li>
                                         </ul>
                                     </div>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
 
-                        <div class="carousel-item">
-                            <div class="projet-slide" id="projets-quatre">
-                                <img class="img-fluid" src="images/tictactoe.png" alt="illustration jeu tic tac toe" title="Tic Tac Toe" />
-                                <div class="carousel-caption">
-                                    <h3>Tic Tac Toe</h3>
-                                    <ul>
-                                        <li>
-                                            <div><em>Développement</em> d'une application <em> Android</em>. Jeu du tic tac toe.</div>
-                                        </li>
-                                        <li>Outils : Java avec le logiciel Android Studio, XML</li>
-                                        <li>Acquis : initiation à la création d'application, autonomie</li>
-                                    </ul>
+                            <div class="carousel-item">
+                                <div class="projet-slide" id="projets-cinq">
+                                    <img class="img-fluid" src="images/jan_computer.png" alt="site jan computer" title="JAN Computer games" />
+                                    <div class="carousel-caption">
+                                        <h3>JAN</h3>
+                                        <ul>
+                                            <li>
+                                                <div><em>Réalisation</em> d'un site web sur les jeux vidéos pour un projet d'anglais.</div>
+                                            </li>
+                                            <li>Outils : HTML, CSS, Bootstrap</li>
+                                            <li>Acquis : apprentissage de l'anglais, compétences web</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="carousel-item">
-                            <div class="projet-slide" id="projets-cinq">
-                                <img class="img-fluid" src="images/jan_computer.png" alt="site jan computer" title="JAN Computer games" />
-                                <div class="carousel-caption">
-                                    <h3>JAN</h3>
-                                    <ul>
-                                        <li>
-                                            <div><em>Réalisation</em> d'un site web sur les jeux vidéos pour un projet d'anglais.</div>
-                                        </li>
-                                        <li>Outils : HTML, CSS, Bootstrap</li>
-                                        <li>Acquis : apprentissage de l'anglais, compétences web</li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
+                        <!-- /.carousel-inner -->
 
+                        <a href="#projects-carousel" class="carousel-control-prev" data-slide="prev">
+                            <!-- <span class="carousel-control-prev-icon"></span> -->
+                            <i class="fas fa-arrow-left fa-2x"></i>
+                            <span class="sr-only" aria-hidden="true">Prev</span>
+                        </a>
+                        <a href="#projects-carousel" class="carousel-control-next" data-slide="next">
+                            <!-- <span class="carousel-control-next-icon"></span> -->
+                            <i class="fas fa-arrow-right fa-2x"></i>
+                            <span class="sr-only" aria-hidden="true">Next</span>
+                        </a>
                     </div>
-                    <!-- /.carousel-inner -->
-
-                    <a href="#projects-carousel" class="carousel-control-prev" data-slide="prev">
-                        <!-- <span class="carousel-control-prev-icon"></span> -->
-                        <i class="fas fa-arrow-left fa-2x"></i>
-                        <span class="sr-only" aria-hidden="true">Prev</span>
-                    </a>
-                    <a href="#projects-carousel" class="carousel-control-next" data-slide="next">
-                        <!-- <span class="carousel-control-next-icon"></span> -->
-                        <i class="fas fa-arrow-right fa-2x"></i>
-                        <span class="sr-only" aria-hidden="true">Next</span>
-                    </a>
-
                 </div>
                 <!-- /.carousel -->
             </div>
@@ -278,13 +285,74 @@
                 <div id="parcours-box">
                     <article data-aos="fade-right" data-aos-easing="custom-easing" class="col-lg">
                         <h3>Formations</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, doloribus a! Quis natus ut, minus consequuntur praesentium nesciunt culpa voluptatem, saepe, facere ad rerum corrupti iure dolores porro ipsam illum.</p>
+
+                        <div id="formation-content" class="row">
+                            <div id="dut" class="col-lg">
+                                <h4>Diplôme Universitaire de Technologique d'Informatique</h4>
+                                <p>
+                                    <a class="underline" href="https://iut-lannion.univ-rennes1.fr/" target="blank">Institut Universitaire Technologique de Lannion</a> (22300)</p>
+
+                                <ul>
+                                    <li>Développement web</li>
+                                    <li>Manipulation de bases de données</li>
+                                    <li>Algorithmique</li>
+                                </ul>
+                            </div>
+
+
+                            <div class="separator d-block d-lg-none col">
+                                <hr/>
+                            </div>
+
+                            <div id="bac" class="col-lg">
+                                <h4>Baccalauréat Scientifique</h4>
+                                <p>
+                                    <a class="underline" href="http://www.lycee-pavie.fr/1-31-Le-lycee-Auguste-Pavie.php" target="blank">Lycée Auguste Pavie, Guingamp</a> (22200)
+                                </p>
+
+                                <ul>
+                                    <li>Spécialité Sciences de la Vie et de la Terre</li>
+                                    <li>Option Informatique et Sciences Numérique (ISN) en Terminale</li>
+                                    <li>Option Informatique et Création Numérique (ICN) en Première et Seconde</li>
+                                </ul>
+                            </div>
+                        </div>
+
                     </article>
 
                     <article data-aos="fade-left" data-aos-easing="custom-easing" class="col-lg">
                         <h3>Expériences professionnelles</h3>
-                        <p>Lsam velit veniam iusto corporis ad magnam nulla. Ipsum distinctio sit harum. Praesentium, tempore? Incidunt omnis amet eligendi illum eos quibusdam tempore, modi quis maxime nisi nesciunt, quidem expedita! Nihil eum unde necessitatibus
-                            earum quae? Dolor!</p>
+                        <div id="experience-content" class="row">
+                            <div id="cdd" class="col-lg">
+                                <h4>Agent polyvalent services techniques</h4>
+                                <p>
+                                    <a class="underline" href="https://www.ville-ploumagoar.fr/" target="blank">Ville de ploumagoar</a> (22225)
+                                </p>
+
+                                <ul>
+                                    <li>Entretient des espaces verts</li>
+                                    <li>Nettoyage de la voirie</li>
+                                </ul>
+                            </div>
+
+                            <div class="separator d-block d-lg-none col">
+                                <hr/>
+                            </div>
+
+                            <div id="mission" class="col-lg">
+                                <h4>Missions argent de poche</h4>
+                                <p><a class="underline" href="http://www.louargat.com/" target="blank">Ville de louargat</a> (22540)</p>
+
+                                <ul>
+                                    <li>Mise en place des tables et chaises repas communal</li>
+                                    <li>Pose d'une protection sur mur en bois</li>
+                                </ul>
+                            </div>
+
+
+
+
+                        </div>
                     </article>
                 </div>
 
@@ -337,12 +405,52 @@
 
     </main>
 
-    <footer>
+    <footer id="contact">
         <div class="container">
             <h2>Contact</h2>
-            <p id="copyright">Copyright &copy; 2020 Tous droits réservés.</p>
-        </div>
 
+            <div class="row">
+
+                <div class="col">
+                    <div id="links">
+                        <p class="underline">
+                            <i class="fa-2x fab fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/maxencelarmet/" target="blank">Maxence LARMET</a>
+                        </p>
+
+                        <p class="underline">
+                            <i class="fa-2x fab fa-github"></i>
+                            <a href="https://github.com/mlarmet" target="blank">/mlarmet</a>
+                        </p>
+                        <p class="underline">
+                            <i class="fa-2x fas fa-mobile-alt"></i>
+                            <a href="tel:+33676624172">06 76 62 41 72</a>
+                        </p>
+                        <p class="underline" id="mail">
+                            <i class="fa-2x far fa-envelope"></i>
+                            <a href="mailto:maxencelarmet@orange.fr">maxencelarmet@orange.fr</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <nav>
+                        <ul id="footer-nav" class="navbar-nav">
+                            <li> <a class="underline second-nav" href="#">Accueil</a> </li>
+                            <li> <a class="underline second-nav" href="#a-propos">A propos</a> </li>
+                            <li> <a class="underline nav-item second-nav" href="#projets">Projets</a> </li>
+                            <li> <a class="underline second-nav" href="#parcours">Parcours</a> </li>
+                            <li> <a class="underline second-nav" href="#competences">Compétences</a> </li>
+                            <li> <a class="underline second-nav" href="#contact">Contact</a> </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+
+            <hr/>
+            <p id="copyright">Copyright &copy; 2021 Tous droits réservés.</p>
+        </div>
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

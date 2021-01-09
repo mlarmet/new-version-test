@@ -72,10 +72,16 @@ footer {
 footer {
     position: relative;
     margin-top: -11em;
+    padding-bottom: 0;
 }
 
 section p {
-    margin: 1em 0;
+    margin: 0;
+}
+
+section h2,
+footer h2 {
+    margin-bottom: 48px;
 }
 
 section h2:after {
@@ -84,7 +90,6 @@ section h2:after {
     position: absolute;
     width: 50%;
     height: 4px;
-    z-index: -1;
     background-color: var(--secondaryColor);
 }
 
@@ -103,7 +108,11 @@ h2 {
 
 h3 {
     font-size: 1.5em;
-    /* margin-bottom: 0.5em; */
+    margin-bottom: 1em;
+}
+
+h4 {
+    font-size: 1.25em;
 }
 
 [data-aos][data-aos][data-aos-easing="custom-easing"] {
@@ -146,6 +155,24 @@ a:hover {
 .reverse-color {
     background-color: var(--primaryColor);
     color: var(--white);
+}
+
+.underline {
+    position: relative;
+}
+
+.underline:after {
+    display: block;
+    content: "";
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 250ms ease-in-out;
+}
+
+.underline:hover:after,
+.underline.active:after {
+    transform: scaleX(1);
 }
 
 
@@ -245,37 +272,34 @@ a:hover {
     overflow-y: auto;
 }
 
-.navbar-nav {
+header .navbar-nav {
     display: flex;
     flex-flow: row nowrap;
 }
 
 .nav-link,
 .nav-link:hover {
-    position: relative;
+    color: var(--white);
     margin: 0 0.25em;
     padding: 0 0.5em!important;
     font-size: 1.125em;
 }
 
-.nav-link:after {
-    display: block;
-    content: "";
-    position: absolute;
-    height: 2px;
-    width: calc(50% - 0.5em);
-    left: 0.5em;
-    bottom: -5px;
-    transform: scaleX(0);
-    transform-origin: left;
-    background-color: var(--secondaryColor);
-    z-index: -1;
-    transition: transform 250ms ease-in-out;
+.nav-link {
+    color: var(--white);
+    font-size: 1.125em;
 }
 
-.nav-link.active:after,
-.nav-link:hover:after {
-    transform: scaleX(1);
+.nav-link:after,
+.second-nav:after {
+    width: calc(50% - 0.5em);
+    background-color: var(--secondaryColor);
+    height: 2px;
+}
+
+.nav-link:after {
+    left: 0.5em;
+    bottom: -5px;
 }
 
 
@@ -450,7 +474,8 @@ a:hover {
 }
 
 #a-propos .row {
-    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
     padding: 15px 0;
     border-radius: 10px;
     background-color: var(--white);
@@ -465,7 +490,6 @@ a:hover {
 
 #a-propos-text p {
     flex: 1;
-    margin: 1em 0;
 }
 
 #a-propos-container-img {
@@ -505,8 +529,10 @@ a:hover {
 }
 
 #projets h3 {
-    margin: 0 auto;
-    margin-bottom: 0.5em;
+    /*margin: 0 auto;
+    margin-bottom: 0.5em; */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -612,10 +638,6 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
     background-color: var(--fillColor);
 }
 
-#parcours-box {
-    margin-top: 3em;
-}
-
 #parcours-container article {
     box-shadow: 0 0 20px rgba(0, 0, 0, .1);
     padding: 15px;
@@ -627,8 +649,50 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
     margin-bottom: 30px;
 }
 
-#parcours-container article p {
+#parcours-container article .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#parcours-container article .row>div:not(.sperator) {
+    /* flex-basis: 50%; */
+}
+
+#parcours-container article .row ul {
     margin-bottom: 0;
+}
+
+#parcours-container article .row a,
+#parcours-container article .row a:hover {
+    color: var(--secondaryColor);
+}
+
+#parcours-container article .row a:after {
+    height: 1px;
+    width: 100%;
+    bottom: -2.5px;
+    background-color: var(--secondaryColor);
+}
+
+#parcours-container article .row hr {
+    border-color: rgba(0, 0, 0, .15);
+    height: 1px;
+}
+
+#dut::before {
+    content: "2019 - En cours";
+}
+
+#bac::before {
+    content: "2018 - 2019";
+}
+
+#mission::before {
+    content: "2019";
+}
+
+#cdd::before {
+    content: "Août 2020";
 }
 
 
@@ -639,7 +703,6 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
 
 #competences-container .row {
     justify-content: space-evenly;
-    margin-top: 3em;
     /*margin-left: 0;
     margin-right: 0; */
 }
@@ -686,6 +749,51 @@ margin: 0;
 /*-----------------------------------------------------------------------------------------------------*/
 
 
+/*------------------------------------------------------------------------FOOTER-----------------------*/
+
+footer a {
+    text-transform: unset!important;
+}
+
+footer i {
+    vertical-align: middle;
+    padding-right: 0.25em;
+}
+
+#links p {
+    margin: 0;
+}
+
+footer hr {
+    border-color: var(--fillColor)
+}
+
+footer nav,
+footer ul,
+#links {
+    height: 100%;
+}
+
+footer ul,
+#links {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+}
+
+.second-nav,
+.second-nav:hover {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 1em;
+    width: fit-content;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+
 /*-------------------------------------------------------------RESPONSIVE WEB DESIGN-------------------*/
 
 @media screen and (max-width: 1199.98px) {
@@ -724,7 +832,7 @@ margin: 0;
         background-color: var(--primaryColor);
     }
     .navbar,
-    .navbar-nav {
+    header .navbar-nav:not(#footer-nav) {
         flex-flow: column wrap;
         align-items: center;
         justify-content: center;
@@ -834,8 +942,8 @@ margin: 0;
     #a-propos-img-photo {
         transform: scale(1.33) rotate(-10deg);
     }
-    #a-propos-text {
-        padding-top: 2em;
+    #a-propos-img-container {
+        margin-bottom: 2em;
     }
     .carousel-control-next,
     .carousel-control-prev {
@@ -909,7 +1017,8 @@ margin: 0;
         margin-bottom: 1em;
     }
     #info-photo {
-        display: none;
+        /* display: none; */
+        opacity: 0.3;
     }
     .reseaux-sociaux {
         margin-top: 3em;
@@ -939,7 +1048,7 @@ margin: 0;
         width: fit-content;
     }
     #a-propos-img-container {
-        /*display: none;*/
+        display: none;
         min-width: 150px;
     }
     #scroll-down {
@@ -949,11 +1058,11 @@ margin: 0;
 
 @media screen and (max-width: 575.98px) {
     #a-propos {
-        padding: 64px 1em 1.5em;
+        /* padding: 64px 1em 1.5em; */
     }
-    #projets h3 {
+    /*#projets h3 {
         margin-bottom: 1em;
-    }
+    } */
     .carousel-caption {
         position: relative;
         width: calc(100% + 1.3px);

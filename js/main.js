@@ -2,8 +2,6 @@ var scrollLimit = 100;
 var fait = false;
 var mobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
 
-
-
 function normalizeSlideHeights() {
     $('.carousel').each(function() {
         var items = $('.carousel-item', this);
@@ -18,39 +16,54 @@ function normalizeSlideHeights() {
     });
 }
 
-
-$(document).ready(function() {
-    //$(".reseaux-sociaux span").fadeOut(0);
-});
+//$(".reseaux-sociaux span").fadeOut(0);
 
 $(window).on("load", function() {
 
-    $("html").animate({ scrollTop: 0 }, 10);
-
-
     setTimeout(function() {
-
-        $("#loader").fadeOut(250);
-
+        $("html").scrollTop(0).css("scroll-behavior", "smooth").css("overflow-y", "auto");
+    }, 10);
+    setTimeout(function() {
         AOS.init({
-            duration: 500,
-            disable: 'mobile',
+            duration: 750,
+            disable: function() {
+                return (window.matchMedia("(max-width: 767.68px)").matches) || mobile
+            },
             easing: 'ease-in-out',
             once: true,
             //box trigger - window trigger
             anchorPlacement: 'center-bottom'
         });
-
-        $("html").css("overflow-y", "auto");
-        $("html").css("scroll-behavior", "smooth");
-
+        $("#loader").fadeOut(250);
     }, 250);
 
     nav();
 
-    $(".nav-link").on("click", function() {
-        $(".navbar-nav").find('.active').removeClass("active");
+    $("header .nav-link").on("click", function() {
+        $("header .navbar-nav").find('.active').removeClass("active");
         $(this).addClass("active");
+
+        /*$("footer .navbar-nav").find('.active').removeClass("active");
+
+        var monElem = $(this).attr("href");
+        $("footer .navbar-nav li a").each(function() {
+
+            if ($(this).attr("href") == monElem) {
+                $(this).addClass("active");
+            }
+        });*/
+    });
+
+    $("footer .nav-link").on("click", function() {
+        $("header .navbar-nav").find('.active').removeClass("active");
+
+        var monElem = $(this).attr("href");
+        $("header .navbar-nav li a").each(function() {
+
+            if ($(this).attr("href") == monElem) {
+                $(this).addClass("active");
+            }
+        });
     });
 
     $("#menu, .nav-link").click(function() {
