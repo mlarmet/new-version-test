@@ -222,6 +222,34 @@ a:hover {
     transform: scaleX(1);
 }
 
+.fadeOut {
+    animation: 250ms ease-in-out forwards fadeOut;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.fadeIn {
+    animation: 250ms ease-in-out forwards fadeIn;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
 
 /*-------------------------------------------------------------------------------------------------------*/
 
@@ -316,6 +344,7 @@ a:hover {
     top: 0;
     left: 0;
     z-index: 998;
+    transition: all 250ms ease-in-out!important;
 }
 
 #navigation nav,
@@ -553,6 +582,7 @@ a:hover {
 .reseaux-sociaux span {
     display: block;
     opacity: 0;
+    visibility: hidden;
     position: absolute;
     left: -1.5em;
     margin-top: 1em;
