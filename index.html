@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
 
     <meta charset="utf-8" />
     <meta name="description" content="Page Personnel Maxence LARMET">
-    <meta name="keywords" content="HTML, CSS, JavaScript, Page Personnel, CV, Developpement, Programmation, DUT, Informatique">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Page Personnel, CV, Developpement, Programmation, DUT, Informatique, Web, Developpeur, Code, Algorithme">
     <meta name="author" content="Maxence LARMET">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
@@ -18,42 +18,27 @@
     <link rel="preload" href="fonts/TitilliumWeb-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/WorkSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&family=Work+Sans:wght@400;700&display=swap" /> -->
-
     <!-- CSS IMPORT -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" crossorigin="anonymous" />
-
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" /> -->
     <link rel="stylesheet" type="text/css" href="fa/css/all.min.css" />
-
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <!-- JS IMPORT -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" crossorigin="anonymous"></script> -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-
 </head>
 
 <body>
 
     <div id="loader">
-        <div id="loader-content">
-            <div class="d-flex justify-content-center">
-                <div class="spinner-border" role="status">
-                </div>
-            </div>
-            <h1>Chargement...</h1>
-        </div>
+        <div class="spinner" role="status"></div>
+        <h1>Chargement...</h1>
     </div>
 
     <header>
         <div id="header-main-content">
+
             <div id="navigation-mobile">
-                <div class="container" id="navigation-mobile-bar">
+                <div class="page-largueur" id="navigation-mobile-bar">
                     <p class="portfolio">Portfolio</p>
                     <div id="menu">
                         <div class="bar"></div>
@@ -61,28 +46,28 @@
                         <div class="bar"></div>
                     </div>
                 </div>
-
             </div>
+
             <div id="navigation">
-                <nav class="container navbar">
+                <nav class="page-largueur">
                     <p class="portfolio" id="p2">Portfolio</p>
-                    <ul class="navbar-nav">
-                        <li class="nav-item"> <a class="underline nav-link active" href="#">Accueil</a> </li>
-                        <li class="nav-item"> <a class="underline nav-link" href="#a-propos">A propos</a> </li>
-                        <li class="nav-item"> <a class="underline nav-link" href="#projets">Projets</a> </li>
-                        <li class="nav-item"> <a class="underline nav-link" href="#parcours">Parcours</a> </li>
-                        <li class="nav-item"> <a class="underline nav-link" href="#competences">Compétences</a> </li>
-                        <li class="nav-item"> <a class="underline nav-link" href="#contact">Contact</a> </li>
+                    <ul>
+                        <li> <a class="underline nav-link active" href="#">Accueil</a> </li>
+                        <li> <a class="underline nav-link" href="#a-propos">A propos</a> </li>
+                        <li> <a class="underline nav-link" href="#projets">Projets</a> </li>
+                        <li> <a class="underline nav-link" href="#parcours">Parcours</a> </li>
+                        <li> <a class="underline nav-link" href="#competences">Compétences</a> </li>
+                        <li> <a class="underline nav-link" href="#contact">Contact</a> </li>
                     </ul>
                 </nav>
             </div>
 
-            <div id="info" class="container">
+            <div id="info" class="page-largueur">
                 <div id="info-text">
                     <h1>Maxence Larmet</h1>
                     <p>Etudiant en informatique</p>
 
-                    <a id="contact-me" class="rounded-pill hover-fill" href="#contact">Me contacter</a>
+                    <a id="contact-me" class="bord-rond hover-fill" href="#contact">Me contacter</a>
 
                     <div class="reseaux-sociaux">
                         <a href="https://linkedin.com/in/maxencelarmet" target="_blank" rel="noreferrer noopener">
@@ -121,7 +106,7 @@
             <div class="shape">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                     <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
-            </svg>
+                </svg>
             </div>
 
         </div>
@@ -132,24 +117,19 @@
 
         <!------------ Début A propos --------->
         <section id="a-propos">
-            <div class="container" id="a-propos-container">
+            <div class="page-largueur" id="a-propos-container">
                 <h2 id="a-propos-title">A propos</h2>
                 <div data-aos="slide-up" data-aos-easing="custom-easing">
+                    <div id="a-propos-img">
+                        <img id="a-propos-img-photo" src="images/profil.min.jpg" alt="photo-de-profil">
+                    </div>
+                    <div id="a-propos-text" class="col">
+                        <p>Bonjour,<br/>Je suis actuellement étudiant en DUT Informatique avec pour objectif de devenir développeur.<br /> Afin de valider mon dîplome, je dois effectuer un stage de 2 mois en entreprise.<br/> Grâce à ma formation, j'ai pu
+                            acquérir une certaine expérience dans la programmation (création de plusieurs sites web avec les outils HTML, CSS ou encore JavaScript mais aussi d'autres langages comme le Java, le C…).
+                        </p>
 
-                    <div class="row">
-                        <div id="a-propos-img" class="col-xl-3 col-lg-4">
-                            <div id="a-propos-img-container">
-                                <img id="a-propos-img-photo" class="img-fluid" src="images/profil.min.jpg" alt="photo-de-profil">
-                            </div>
-                        </div>
-                        <div id="a-propos-text" class="col">
-                            <p>Bonjour,<br/>Je suis actuellement étudiant en DUT Informatique avec pour objectif de devenir développeur.<br /> Afin de valider mon dîplome, je dois effectuer un stage de 2 mois en entreprise.<br/> Grâce à ma formation, j'ai
-                                pu acquérir une certaine expérience dans la programmation (création de plusieurs sites web avec les outils HTML, CSS ou encore JavaScript mais aussi d'autres langages comme le Java, le C…).
-                            </p>
+                        <a id="cv" class="bord-rond hover-fill" href="cv/cv_maxence_larmet.pdf" target="_blank" rel="noreferrer noopener">Télécharger mon CV</a>
 
-                            <a id="cv" class="rounded-pill hover-fill" href="cv/cv_maxence_larmet.pdf" target="_blank" rel="noreferrer noopener">Télécharger mon CV</a>
-
-                        </div>
                     </div>
                 </div>
             </div>
@@ -158,143 +138,114 @@
 
         <!------------ Debut Projets ------------>
         <section id="projets">
-            <div class="container" id="projets-container">
+            <div class="page-largueur" id="projets-container">
                 <h2>Mes projets</h2>
-                <div data-aos="zoom-out-up" data-aos-easing="custom-easing" data-aos-anchor-placement="bottom-bottom">
+                <div id="slider-container" data-aos="zoom-out-up" data-aos-easing="custom-easing" data-aos-anchor-placement="bottom-bottom">
 
-                    <div class="carousel slide" id="projects-carousel" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#projects-carousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#projects-carousel" data-slide-to="1"></li>
-                            <li data-target="#projects-carousel" data-slide-to="2"></li>
-                            <li data-target="#projects-carousel" data-slide-to="3"></li>
-                            <li data-target="#projects-carousel" data-slide-to="4"></li>
-                        </ol>
-                        <!-- /.carousel-indicators -->
-
-                        <div class="carousel-inner" role="listbox">
-
-                            <div class="carousel-item active">
-                                <a class="voir-projet" href="https://github.com/mlarmet/site-ppp" title="Voir le projet" target="blank">
-                                    <div class="projet-slide" id="projets-un">
-                                        <img class="img-fluid" src="images/robots-programmes.jpeg" alt="site projet medecine" title="Robots programmés" />
-                                        <div class="carousel-caption">
-                                            <h3>Robots programmés&ensp;<i class="fas fa-external-link-alt"></i></h3>
-                                            <ul>
-                                                <li>
-                                                    <div><em>Conception</em> et <em>réalisation</em> d'un <em>site web</em> sur le lien entre santé et informatique.<br />Projet encadré lors du 1<sup>er</sup> semestre du DUT Informatique.
-                                                    </div>
-                                                </li>
-                                                <li>Outils : HTML, CSS, Bootstrap</li>
-                                                <li>Acquis : compétences web, travail en équipe</li>
-                                            </ul>
+                    <div class="slider-item active">
+                        <a class="voir-projet" href="https://github.com/mlarmet/site-ppp" title="Voir le projet" target="blank">
+                            <img src="images/robots-programmes.jpeg" alt="site projet medecine" title="Robots programmés" />
+                            <div class="slider-description">
+                                <h3>Robots programmés&ensp;<i class="fas fa-external-link-alt"></i></h3>
+                                <ul>
+                                    <li>
+                                        <div><em>Conception</em> et <em>réalisation</em> d'un <em>site web</em> sur le lien entre santé et informatique.<br />Projet encadré lors du 1<sup>er</sup> semestre du DUT Informatique.
                                         </div>
-                                    </div>
-                                </a>
+                                    </li>
+                                    <li>Outils : HTML, CSS, Bootstrap</li>
+                                    <li>Acquis : compétences web, travail en équipe</li>
+                                </ul>
                             </div>
-                            <div class="carousel-item">
-                                <div class="projet-slide" id="projets-deux">
-                                    <img class="img-fluid" src="images/python_logo.png" alt="illustration projets python" title="Jeu en python" />
-                                    <div class="carousel-caption">
-                                        <h3>Jeux en Python</h3>
-                                        <ul>
-                                            <li>
-                                                <div>Réalisation de plusieurs petits <em>jeux</em> en <em>python</em> (en mode texte) tel que : pendu, morpion
-                                                </div>
-                                            </li>
-                                            <li>Outils : Python (3.7) avec le logiciel Visual Studio Code</li>
-                                            <li>Acquis : persévérance, autonomie</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="carousel-item">
-                                <a class="voir-projet" href="https://github.com/mlarmet/casse-brique" title="Voir le projet" target="blank">
-                                    <div class="projet-slide" id="projets-trois">
-
-                                        <img class="img-fluid" src="images/casse-brique.png" alt="illustration jeu casse brique" title="Casse brique" />
-                                        <div class="carousel-caption">
-                                            <h3>Casse brique&ensp;<i class="fas fa-external-link-alt"></i></h3>
-                                            <ul>
-                                                <li>
-                                                    <div>Conception et réalisation d'un <em>jeu vidéo 2D</em> pour le projet de fin d'année de la spécialité ISN du Baccalauréat.</div>
-                                                </li>
-                                                <li>Outils : Python (3.6) avec le module pygame</li>
-                                                <li>Acquis : gestion du temps, travail en équipe</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="carousel-item">
-                                <div class="projet-slide" id="projets-quatre">
-                                    <img class="img-fluid" src="images/tictactoe.png" alt="illustration jeu tic tac toe" title="Tic Tac Toe" />
-                                    <div class="carousel-caption">
-                                        <h3>Tic Tac Toe</h3>
-                                        <ul>
-                                            <li>
-                                                <div><em>Développement</em> d'une application <em> Android</em>. Jeu du tic tac toe.</div>
-                                            </li>
-                                            <li>Outils : Java avec le logiciel Android Studio, XML</li>
-                                            <li>Acquis : initiation à la création d'application, autonomie</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="carousel-item">
-                                <div class="projet-slide" id="projets-cinq">
-                                    <img class="img-fluid" src="images/jan_computer.jpeg" alt="site jan computer" title="JAN Computer games" />
-                                    <div class="carousel-caption">
-                                        <h3>JAN</h3>
-                                        <ul>
-                                            <li>
-                                                <div><em>Réalisation</em> d'un site web sur les jeux vidéos pour un projet d'anglais.</div>
-                                            </li>
-                                            <li>Outils : HTML, CSS, Bootstrap</li>
-                                            <li>Acquis : apprentissage de l'anglais, compétences web</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- /.carousel-inner -->
-
-                        <a href="#projects-carousel" class="carousel-control-prev" data-slide="prev">
-                            <!-- <span class="carousel-control-prev-icon"></span> -->
-                            <i class="fas fa-arrow-left fa-2x"></i>
-                            <span class="sr-only" aria-hidden="true">Prev</span>
-                        </a>
-                        <a href="#projects-carousel" class="carousel-control-next" data-slide="next">
-                            <!-- <span class="carousel-control-next-icon"></span> -->
-                            <i class="fas fa-arrow-right fa-2x"></i>
-                            <span class="sr-only" aria-hidden="true">Next</span>
                         </a>
                     </div>
+                    <div class="slider-item">
+                        <img src="images/python_logo.png" alt="illustration projets python" title="Jeu en python" />
+                        <div class="slider-description">
+                            <h3>Jeux en Python</h3>
+                            <ul>
+                                <li>
+                                    <div>Réalisation de plusieurs petits <em>jeux</em> en <em>python</em> (en mode texte) tel que : pendu, morpion
+                                    </div>
+                                </li>
+                                <li>Outils : Python (3.7) avec le logiciel Visual Studio Code</li>
+                                <li>Acquis : persévérance, autonomie</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="slider-item">
+                        <a class="voir-projet" href="https://github.com/mlarmet/casse-brique" title="Voir le projet" target="blank">
+                            <img src="images/casse-brique.png" alt="illustration jeu casse brique" title="Casse brique" />
+                            <div class="slider-description">
+                                <h3>Casse brique&ensp;<i class="fas fa-external-link-alt"></i></h3>
+                                <ul>
+                                    <li>
+                                        <div>Conception et réalisation d'un <em>jeu vidéo 2D</em> pour le projet de fin d'année de la spécialité ISN du Baccalauréat.</div>
+                                    </li>
+                                    <li>Outils : Python (3.6) avec le module pygame</li>
+                                    <li>Acquis : gestion du temps, travail en équipe</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="slider-item">
+                        <img src="images/tictactoe.png" alt="illustration jeu tic tac toe" title="Tic Tac Toe" />
+                        <div class="slider-description">
+                            <h3>Tic Tac Toe</h3>
+                            <ul>
+                                <li>
+                                    <div><em>Développement</em> d'une application <em> Android</em>. Jeu du tic tac toe.</div>
+                                </li>
+                                <li>Outils : Java avec le logiciel Android Studio, XML</li>
+                                <li>Acquis : initiation à la création d'application, autonomie</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="slider-item">
+                        <img src="images/jan_computer.jpeg" alt="site jan computer" title="JAN Computer games" />
+                        <div class="slider-description">
+                            <h3>JAN</h3>
+                            <ul>
+                                <li>
+                                    <div><em>Réalisation</em> d'un site web sur les jeux vidéos pour un projet d'anglais.</div>
+                                </li>
+                                <li>Outils : HTML, CSS, Bootstrap</li>
+                                <li>Acquis : apprentissage de l'anglais, compétences web</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="slider-btn" id="slider-left"><i class="fa-2x fas fa-arrow-left"></i></div>
+                    <div class="slider-btn" id="slider-right"><i class="fa-2x fas fa-arrow-right"></i></div>
+
+                    <ol id="slider-nav">
+                        <li id="0" class="active"></li>
+                        <li id="1"></li>
+                        <li id="2"></li>
+                        <li id="3"></li>
+                        <li id="4"></li>
+                    </ol>
+
                 </div>
-                <!-- /.carousel -->
             </div>
-            <!-- /.container -->
         </section>
         <!------------ Fin Projets ------------>
 
         <!------------ Debut Parcours ------------>
         <section id="parcours">
-            <div class="container" id="parcours-container">
+            <div class="page-largueur" id="parcours-container">
                 <h2>Mon parcours</h2>
                 <div id="parcours-box">
-                    <article data-aos="fade-right" data-aos-easing="custom-easing" class="col-lg">
+                    <article data-aos="fade-right" data-aos-easing="custom-easing">
                         <h3>Formations</h3>
 
-                        <div id="formation-content" class="row">
-                            <div id="dut" class="col-lg">
+                        <div id="formation-content">
+                            <div id="dut">
                                 <h4>Diplôme Universitaire de Technologique d'Informatique</h4>
                                 <p>
                                     <a class="underline" href="https://iut-lannion.univ-rennes1.fr/" target="blank">Institut Universitaire Technologique de Lannion</a> (22300)</p>
-
                                 <ul>
                                     <li>Développement web</li>
                                     <li>Manipulation de bases de données</li>
@@ -303,11 +254,11 @@
                             </div>
 
 
-                            <div class="separator d-block d-lg-none col">
+                            <div class="separator">
                                 <hr/>
                             </div>
 
-                            <div id="bac" class="col-lg">
+                            <div id="bac">
                                 <h4>Baccalauréat Scientifique</h4>
                                 <p>
                                     <a class="underline" href="http://www.lycee-pavie.fr/1-31-Le-lycee-Auguste-Pavie.php" target="blank">Lycée Auguste Pavie, Guingamp</a> (22200)
@@ -323,10 +274,10 @@
 
                     </article>
 
-                    <article data-aos="fade-left" data-aos-easing="custom-easing" class="col-lg">
+                    <article data-aos="fade-left" data-aos-easing="custom-easing">
                         <h3>Expériences professionnelles</h3>
-                        <div id="experience-content" class="row">
-                            <div id="cdd" class="col-lg">
+                        <div id="experience-content">
+                            <div id="cdd">
                                 <h4>Agent polyvalent services techniques</h4>
                                 <p>
                                     <a class="underline" href="https://www.ville-ploumagoar.fr/" target="blank">Ville de ploumagoar</a> (22225)
@@ -338,11 +289,11 @@
                                 </ul>
                             </div>
 
-                            <div class="separator d-block d-lg-none col">
+                            <div class="separator">
                                 <hr/>
                             </div>
 
-                            <div id="mission" class="col-lg">
+                            <div id="mission">
                                 <h4>Missions argent de poche</h4>
                                 <p><a class="underline" href="http://www.louargat.com/" target="blank">Ville de louargat</a> (22540)</p>
 
@@ -366,11 +317,11 @@
 
         <!------------ Debut Competences ------------>
         <section id="competences">
-            <div class="container" id="competences-container">
+            <div class="page-largueur" id="competences-container">
                 <h2>Mes compétences</h2>
-                <div class="row">
-                    <article data-aos="flip-right" data-aos-easing="custom-easing" class="reverse-color col-lg">
-                        <div class="circle rounded-circle"><i class="fas fa-file-code fa-2x"></i></div>
+                <div>
+                    <article data-aos="flip-right" data-aos-easing="custom-easing" class="reverse-color">
+                        <div class="circle"><i class="fas fa-file-code fa-2x"></i></div>
                         <h3>Web</h3>
                         <div>
                             <p>HTML / CSS (Boostrap)</p>
@@ -379,8 +330,8 @@
                         </div>
                     </article>
 
-                    <article data-aos="flip-up" data-aos-easing="custom-easing" class="reverse-color col-lg">
-                        <div class="circle rounded-circle"><i class="fas fa-terminal"></i></div>
+                    <article data-aos="flip-up" data-aos-easing="custom-easing" class="reverse-color">
+                        <div class="circle"><i class="fas fa-terminal"></i></div>
                         <h3>Programmation</h3>
                         <div>
                             <p>Java</p>
@@ -388,8 +339,8 @@
                             <p>Python</p>
                         </div>
                     </article>
-                    <article data-aos="flip-left" data-aos-easing="custom-easing" class="reverse-color col-lg">
-                        <div class="circle rounded-circle"><i class="fas fa-database fa-2x"></i></div>
+                    <article data-aos="flip-left" data-aos-easing="custom-easing" class="reverse-color">
+                        <div class="circle"><i class="fas fa-database fa-2x"></i></div>
                         <h3>Base de données</h3>
                         <div>
                             <p>PostgreSQL</p>
@@ -409,45 +360,41 @@
     </main>
 
     <footer id="contact">
-        <div class="container">
+        <div class="page-largueur">
             <h2>Contact</h2>
 
-            <div class="row">
+            <div id="footer-content">
 
-                <div class="col">
-                    <div id="links">
-                        <p class="underline">
-                            <i class="fa-2x fab fa-linkedin"></i>
-                            <a href="https://www.linkedin.com/in/maxencelarmet/" target="blank">Maxence LARMET</a>
-                        </p>
+                <div id="links">
+                    <p>
+                        <i class="fa-2x fab fa-linkedin"></i>
+                        <a class="underline" href="https://www.linkedin.com/in/maxencelarmet/" target="blank">Maxence LARMET</a>
+                    </p>
 
-                        <p class="underline">
-                            <i class="fa-2x fab fa-github"></i>
-                            <a href="https://github.com/mlarmet" target="blank">/mlarmet</a>
-                        </p>
-                        <p class="underline">
-                            <i class="fa-2x fas fa-mobile-alt"></i>
-                            <a href="tel:+33676624172">06 76 62 41 72</a>
-                        </p>
-                        <p class="underline" id="mail">
-                            <i class="fa-2x far fa-envelope"></i>
-                            <a href="mailto:maxencelarmet@orange.fr">maxencelarmet@orange.fr</a>
-                        </p>
-                    </div>
+                    <p>
+                        <i class="fa-2x fab fa-github"></i>
+                        <a class="underline" href="https://github.com/mlarmet" target="blank">/mlarmet</a>
+                    </p>
+                    <p>
+                        <i class="fa-2x fas fa-mobile-alt"></i>
+                        <a class="underline" href="tel:+33676624172">06 76 62 41 72</a>
+                    </p>
+                    <p>
+                        <i class="fa-2x far fa-envelope"></i>
+                        <a class="underline" href="mailto:maxencelarmet@orange.fr">maxencelarmet@orange.fr</a>
+                    </p>
                 </div>
 
-                <div class="col">
-                    <nav>
-                        <ul id="footer-nav" class="navbar-nav">
-                            <li> <a class="underline second-nav" href="#">Accueil</a> </li>
-                            <li> <a class="underline second-nav" href="#a-propos">A propos</a> </li>
-                            <li> <a class="underline nav-item second-nav" href="#projets">Projets</a> </li>
-                            <li> <a class="underline second-nav" href="#parcours">Parcours</a> </li>
-                            <li> <a class="underline second-nav" href="#competences">Compétences</a> </li>
-                            <li> <a class="underline second-nav" href="#contact">Contact</a> </li>
-                        </ul>
-                    </nav>
-                </div>
+                <nav>
+                    <ul>
+                        <li> <a class="underline second-nav-link" href="#">Accueil</a> </li>
+                        <li> <a class="underline second-nav-link" href="#a-propos">A propos</a> </li>
+                        <li> <a class="underline second-nav-link" href="#projets">Projets</a> </li>
+                        <li> <a class="underline second-nav-link" href="#parcours">Parcours</a> </li>
+                        <li> <a class="underline second-nav-link" href="#competences">Compétences</a> </li>
+                        <li> <a class="underline second-nav-link" href="#contact">Contact</a> </li>
+                    </ul>
+                </nav>
 
             </div>
 
