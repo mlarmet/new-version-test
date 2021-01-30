@@ -71,9 +71,9 @@ class Swipe {
         }.bind(this), false);
     }
 }
-var scrollLimit = 100;
-var fait = false;
-var mobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+
+const scrollLimit = 100;
+const mobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
 
 const slides = document.querySelectorAll(".slider-item");
 const slidesIndicators = document.querySelectorAll("#slider-nav li");
@@ -81,7 +81,11 @@ const nbSlides = slides.length;
 
 var countSlide = 0;
 var previousCount;
+
+var fait = false;
 var pause = false;
+var readyLeft = true;
+var readyRight = true;
 
 function resetSlide(index, position) {
     slides[index].classList.add("notransition");
@@ -110,6 +114,9 @@ function slideSuivante() {
     document.querySelectorAll("#slider-nav li").forEach(item => {
         item.removeEventListener("click", handler, true);
     });
+
+    readyLeft = false;
+    readyRight = false;
 
     //document.getElementById("slider-container").removeEventListener("touchmove", swipe, true);
 
@@ -143,6 +150,9 @@ function slideSuivante() {
         document.querySelectorAll("#slider-nav li").forEach(item => {
             item.addEventListener("click", handler, true);
         });
+
+        readyLeft = true;
+        readyRight = true;
     }, 500);
 }
 
@@ -154,6 +164,9 @@ function slidePrecedente() {
     document.querySelectorAll("#slider-nav li").forEach(item => {
         item.removeEventListener("click", handler, true);
     });
+
+    readyLeft = false;
+    readyRight = false;
 
     previousCount = countSlide;
 
@@ -185,6 +198,8 @@ function slidePrecedente() {
         document.querySelectorAll("#slider-nav li").forEach(item => {
             item.addEventListener("click", handler, true);
         });
+
+
     }, 500);
 }
 
@@ -196,6 +211,9 @@ function slideX(index) {
     document.querySelectorAll("#slider-nav li").forEach(item => {
         item.removeEventListener("click", handler, true);
     });
+
+    readyLeft = false;
+    readyRight = false;
 
     previousCount = countSlide;
 
@@ -252,6 +270,12 @@ function slideX(index) {
         document.querySelectorAll("#slider-nav li").forEach(item => {
             item.addEventListener("click", handler, true);
         });
+
+        setTimeout(() => {
+            readyLeft = true;
+            readyRight = true;
+        }, 100);
+
     }, 500);
 
 }
@@ -339,22 +363,31 @@ document.getElementById("slider-right").addEventListener("click", slideSuivante)
 
 var swiper = new Swipe(document.getElementById('slider-container'));
 
-swiper.onLeft(function() {
-    pause = true;
-    slideSuivante();
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-    setTimeout(function() {
-        pause = false;
-    }, 3000);
+swiper.onLeft(function() {
+
+    if (readyLeft) {
+        pause = true;
+        slideSuivante();
+
+        setTimeout(function() {
+            pause = false;
+        }, 3000);
+    }
 });
 
 swiper.onRight(function() {
-    pause = true;
-    slidePrecedente();
+    if (readyRight) {
+        pause = true;
+        slidePrecedente();
 
-    setTimeout(function() {
-        pause = false;
-    }, 3000);
+        setTimeout(function() {
+            pause = false;
+        }, 3000);
+    }
 });
 
 document.querySelectorAll("header .nav-link").forEach(link => {
@@ -386,8 +419,8 @@ document.querySelectorAll(".nav-link").forEach(link => {
     link.addEventListener("click", showNav);
 });
 
-document.querySelectorAll("#slider-nav li").forEach(items => {
-    items.addEventListener("click", handler, true);
+document.querySelectorAll("#slider-nav li").forEach(link => {
+    link.addEventListener("click", handler, true);
 });
 
 var slideBeforeEvent;
