@@ -21,6 +21,11 @@
     --reseauxColor: #696b75;
 }
 
+::selection {
+    background-color: var(--secondaryColor);
+    color: var(--white);
+}
+
 *,
 *::before,
 *::after {
