@@ -7,7 +7,7 @@ class Swipe {
         this.element.addEventListener('touchstart', function(evt) {
             this.xDown = evt.touches[0].clientX;
             this.yDown = evt.touches[0].clientY;
-        }.bind(this), false);
+        }.bind(this), { passive: false });
 
     }
 
@@ -68,7 +68,7 @@ class Swipe {
     run() {
         this.element.addEventListener('touchmove', function(evt) {
             this.handleTouchMove(evt).bind(this);
-        }.bind(this), false);
+        }.bind(this), { passive: false });
     }
 }
 
@@ -199,6 +199,8 @@ function slidePrecedente() {
             item.addEventListener("click", handler, true);
         });
 
+        readyLeft = true;
+        readyRight = true;
 
     }, 500);
 }
@@ -363,10 +365,6 @@ document.getElementById("slider-right").addEventListener("click", slideSuivante)
 
 var swiper = new Swipe(document.getElementById('slider-container'));
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 swiper.onLeft(function() {
 
     if (readyLeft) {
@@ -443,6 +441,7 @@ document.getElementById("slider-container").addEventListener("mouseleave", funct
 
 window.addEventListener("load", function() {
 
+    //timeout 10ms pour attendre que la page est refresh pour scroll to top
     setTimeout(function() {
         document.querySelector("html").scrollTop = 0;
         document.querySelector("html").style.scrollBehavior = "smooth";
@@ -466,12 +465,24 @@ window.addEventListener("load", function() {
 
     nav();
 
-    setInterval(function() {
-        if (!pause)
-            slideSuivante();
-    }, 3000);
-
     swiper.run();
+
+    //si animation sur le slider, attendre qu'il apparaisse pour commencer l'auto swipe
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        document.addEventListener('aos:in', ({ detail }) => {
+            if (detail.id === "slider-container") {
+                setInterval(function() {
+                    if (!pause)
+                        slideSuivante();
+                }, 3000);
+            }
+        });
+    } else {
+        setInterval(function() {
+            if (!pause)
+                slideSuivante();
+        }, 3000);
+    }
 
 });
 
